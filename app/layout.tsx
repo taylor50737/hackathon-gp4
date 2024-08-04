@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
+import Header from "@/components/ui/header";
+import SideNav from "@/components/ui/side-nav";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -16,7 +19,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className="flex">
+          <SideNav />
+            <div className="w-full overflow-x-auto bg-violet-50 p-2">
+              <div className="sm:h-[calc(99vh-60px)] overflow-auto">
+                <Header />
+                <div className="w-full flex justify-center mx-auto overflow-auto h-[calc(100vh - 120px)] overflow-y-auto relative">
+                  <div className="w-full md:max-2-6xl">{children}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </body>
     </html>
   );
 }
