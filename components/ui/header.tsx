@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { BsBell } from "react-icons/bs";
 import { GoGear } from "react-icons/go";
-import { SlMagnifier } from "react-icons/sl";
 
 export default function Header() {
   const HeaderMenus = [
@@ -19,7 +18,7 @@ export default function Header() {
 
   return (
     <div>
-      <nav className=" flex flex-row items-center justify-between mx-auto px-5 pt-3">
+      <nav className="flex flex-row items-center justify-between mx-auto px-5 pt-3">
         <Link href="/" className="font-bond text-3xl">
           CICS
         </Link>
@@ -43,7 +42,7 @@ export default function Header() {
         <ul className="gap-1 text-2xl flex">
           {HeaderMenus.map((menu, index) => (
             <li
-              className={`rounded-lg p-2 hover:bg-light-gray ${
+              className={`rounded-lg p-2 hover:bg-light-gray cursor-pointer ${
                 pathname === menu.path ? "bg-light-gray" : ""
               }`}
               key={index}

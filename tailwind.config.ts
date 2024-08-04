@@ -13,7 +13,9 @@ const config: Config = {
         "light-pink": "#FFD8E4",
         "light-purple": "#E8DEF8",
         "light-gray": "#ECE6F0",
-        "light-black": "#49454F"
+        "light-black": "#49454F",
+        "medium-purple": "#CCC2DC",
+        "strong-purple": "#65558F"
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
