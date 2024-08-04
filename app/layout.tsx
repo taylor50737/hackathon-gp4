@@ -22,8 +22,8 @@ export default function RootLayout({
       <body className={inter.className}>
         <div className="flex">
           <SideNav />
-            <div className="w-full overflow-x-auto bg-violet-50 p-2">
-              <div className="sm:h-[calc(99vh-60px)] overflow-auto">
+            <div className="w-full overflow-x-auto bg-light-violet py-2 h-screen">
+              <div className="sm:h-[calc(99vh-60px)] overflow-auto bg-white rounded-3xl">
                 <Header />
                 <div className="w-full flex justify-center mx-auto overflow-auto h-[calc(100vh - 120px)] overflow-y-auto relative">
                   <div className="w-full md:max-2-6xl">{children}</div>

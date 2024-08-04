@@ -1,11 +1,11 @@
 "use client";
 
-import { AiOutlineHome } from "react-icons/ai";
-import { MdOutlineStars } from "react-icons/md";
-import { usePathname } from "next/navigation";
-
 import React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+import { AiOutlineHome } from "react-icons/ai";
+import { MdOutlineStars } from "react-icons/md";
 
 export default function SideNav() {
   const Menus = [
@@ -21,7 +21,9 @@ export default function SideNav() {
     <div className="bg-light-violet h-screen pt-12 relative flex flex-col items-center">
       <Link
         href="/"
-        className={`rounded-2xl hover:bg-light-pink cursor-pointer p-4 ${pathname === "/" ? "bg-light-pink" : ""}`}
+        className={`rounded-2xl hover:bg-light-pink cursor-pointer p-4 ${
+          pathname === "/" ? "bg-light-pink" : ""
+        }`}
       >
         <AiOutlineHome className="text-3xl" />
       </Link>
