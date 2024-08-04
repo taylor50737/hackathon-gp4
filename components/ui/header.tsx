@@ -19,12 +19,12 @@ export default function Header() {
 
   return (
     <div>
-      <nav className="container relative flex flex-row items-center justify-between mx-auto px-5 pt-3">
+      <nav className=" flex flex-row items-center justify-between mx-auto px-5 pt-3">
         <Link href="/" className="font-bond text-3xl">
           CICS
         </Link>
 
-        <div className="bg-light-gray border border-transparent focus-within:border-blue-500 focus-within:bg-transparent flex px-3 rounded-full h-10 lg:w-2/4 mx-auto max-lg:mt-6">
+        <div className="bg-light-gray border border-transparent focus-within:border-blue-500 focus-within:bg-transparent flex px-3 rounded-full h-10 lg:w-2/4 mx-auto">
           <input
             type="text"
             placeholder="Search Course or Student Name"
