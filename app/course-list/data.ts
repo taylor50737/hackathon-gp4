@@ -1,0 +1,160 @@
+import React from "react";
+const columns = [
+  { name: "ID", uid: "id", sortable: true },
+  { name: "COURSE NAME", uid: "course_name", sortable: true },
+  { name: "YEAR", uid: "year", sortable: true },
+  { name: "QUARTER", uid: "quarter", sortable: true },
+  { name: "STATUS", uid: "status", sortable: true },
+  { name: "ACTIONS", uid: "actions" },
+];
+
+const statusOptions = [
+  { name: "Active", uid: "active" },
+  { name: "Closed", uid: "closed" },
+  { name: "Paused", uid: "paused" },
+];
+
+const courses = [
+  {
+    id: 1,
+    course_name: "Kinder Enrichment Camp",
+    year: "2024",
+    quarter: "Fall",
+    status: "active",
+  },
+  {
+    id: 2,
+    course_name: "S.T.E.A.M. Camp",
+    year: "2023",
+    quarter: "Spring",
+    status: "closed",
+  },
+  {
+    id: 3,
+    course_name: "Saturday Classes",
+    year: "2024",
+    quarter: "Winter",
+    status: "paused",
+  },
+  {
+    id: 4,
+    course_name: "Operating Systems",
+    year: "2024",
+    quarter: "Fall",
+    status: "active",
+  },
+  {
+    id: 5,
+    course_name: "Databases",
+    year: "2023",
+    quarter: "Summer",
+    status: "active",
+  },
+  {
+    id: 6,
+    course_name: "Computer Networks",
+    year: "2023",
+    quarter: "Fall",
+    status: "closed",
+  },
+  {
+    id: 7,
+    course_name: "Artificial Intelligence",
+    year: "2024",
+    quarter: "Spring",
+    status: "paused",
+  },
+  {
+    id: 8,
+    course_name: "Machine Learning",
+    year: "2024",
+    quarter: "Summer",
+    status: "active",
+  },
+  {
+    id: 9,
+    course_name: "Computer Vision",
+    year: "2024",
+    quarter: "Fall",
+    status: "closed",
+  },
+  {
+    id: 10,
+    course_name: "Natural Language Processing",
+    year: "2024",
+    quarter: "Winter",
+    status: "paused",
+  },
+  {
+    id: 11,
+    course_name: "Software Engineering",
+    year: "2023",
+    quarter: "Spring",
+    status: "active",
+  },
+  {
+    id: 12,
+    course_name: "Web Development",
+    year: "2023",
+    quarter: "Fall",
+    status: "active",
+  },
+  {
+    id: 13,
+    course_name: "Mobile Development",
+    year: "2023",
+    quarter: "Winter",
+    status: "closed",
+  },
+  {
+    id: 14,
+    course_name: "Game Development",
+    year: "2024",
+    quarter: "Summer",
+    status: "paused",
+  },
+  {
+    id: 15,
+    course_name: "Cloud Computing",
+    year: "2024",
+    quarter: "Fall",
+    status: "active",
+  },
+  {
+    id: 16,
+    course_name: "Cybersecurity",
+    year: "2023",
+    quarter: "Spring",
+    status: "closed",
+  },
+  {
+    id: 17,
+    course_name: "DevOps",
+    year: "2023",
+    quarter: "Summer",
+    status: "paused",
+  },
+  {
+    id: 18,
+    course_name: "Data Science",
+    year: "2024",
+    quarter: "Winter",
+    status: "active",
+  },
+  {
+    id: 19,
+    course_name: "Big Data",
+    year: "2024",
+    quarter: "Spring",
+    status: "closed",
+  },
+  {
+    id: 20,
+    course_name: "Human-Computer Interaction",
+    year: "2023",
+    quarter: "Fall",
+    status: "paused",
+  },
+];
+
+export { columns, courses, statusOptions };
