@@ -7,11 +7,13 @@ import { usePathname } from "next/navigation";
 import { AiOutlineHome } from "react-icons/ai";
 import { PiStudent } from "react-icons/pi";
 import { FaBook } from "react-icons/fa";
+import { LuTestTube2 } from "react-icons/lu";
 
 export default function SideNav() {
   const Menus = [
     { title: "Participants", icon: <PiStudent />, path: "/participants" },
-    { title: "Courses", icon: <FaBook />, path: "/course-list" }
+    { title: "Courses", icon: <FaBook />, path: "/course-list" },
+    { title: "Profile Test", icon: <LuTestTube2 />, path: "/participants/matt-dickerson" }
   ];
 
   const pathname = usePathname();
