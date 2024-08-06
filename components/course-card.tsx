@@ -3,8 +3,6 @@
 import React from "react";
 import { Card, CardBody, CardFooter, Image } from "@nextui-org/react";
 
-import RoboticImg from "public/robotic_saturday.jpg";
-
 export default function CourseCard() {
   const list = [
     {
