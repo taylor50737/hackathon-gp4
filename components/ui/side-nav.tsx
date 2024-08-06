@@ -5,14 +5,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { AiOutlineHome } from "react-icons/ai";
-import { MdOutlineStars } from "react-icons/md";
+import { PiStudent } from "react-icons/pi";
+import { FaBook } from "react-icons/fa";
 
 export default function SideNav() {
   const Menus = [
-    { title: "Label", icon: <MdOutlineStars />, path: "/label1" },
-    { title: "Label", icon: <MdOutlineStars />, path: "/label2" },
-    { title: "Label", icon: <MdOutlineStars />, path: "/label3" },
-    { title: "Label", icon: <MdOutlineStars />, path: "/label4" },
+    { title: "Participants", icon: <PiStudent />, path: "/participants" },
+    { title: "Courses", icon: <FaBook />, path: "/course-list" }
   ];
 
   const pathname = usePathname();

@@ -38,7 +38,7 @@ export default function CourseCard() {
   ];
 
   return (
-    <div className="gap-2 grid grid-cols-1 sm:grid-cols-6">
+    <div className="gap-2 grid grid-cols-1 sm:grid-cols-6 pt-2">
       {list.map((item, index) => (
         <Card
           shadow="sm"
