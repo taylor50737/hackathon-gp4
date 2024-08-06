@@ -26,23 +26,29 @@ import { PlusIcon } from "@/components/icons/PlusIcon";
 import { VerticalDotsIcon } from "@/components/icons/VerticalDotsIcon";
 import { ChevronDownIcon } from "@/components/icons/ChevronDownIcon";
 import { SearchIcon } from "@/components/icons/SearchIcon";
-import { columns, participants } from "./data";
+import { columns, courses, statusOptions } from "./data";
 import { capitalize } from "@/utils/capitalize";
 
+const statusColorMap: Record<string, ChipProps["color"]> = {
+  active: "success",
+  closed: "danger",
+  paused: "warning",
+};
+
 const INITIAL_VISIBLE_COLUMNS = [
-  "first_name",
-  "last_name",
-  "dob",
-  "language",
-  "parent_name1",
-  "relationship1",
-  "phone",
+  "course_name",
+  "class_name",
+  "enrolled_time",
+  "course_date",
+  "status",
+  "beforeOrAfterCamp",
+  "pick_up_arrangement",
   "actions",
 ];
 
-type Participant = (typeof participants)[0];
+type Course = (typeof courses)[0];
 
-export default function ParticipantTable() {
+export default function ParticipantCourseTable() {
   const [filterValue, setFilterValue] = React.useState("");
   const [selectedKeys, setSelectedKeys] = React.useState<Selection>(
     new Set([])
@@ -50,7 +56,8 @@ export default function ParticipantTable() {
   const [visibleColumns, setVisibleColumns] = React.useState<Selection>(
     new Set(INITIAL_VISIBLE_COLUMNS)
   );
-  const [rowsPerPage, setRowsPerPage] = React.useState(25);
+  const [statusFilter, setStatusFilter] = React.useState<Selection>("all");
+  const [rowsPerPage, setRowsPerPage] = React.useState(5);
   const [sortDescriptor, setSortDescriptor] = React.useState<SortDescriptor>({
     column: "age",
     direction: "ascending",
@@ -69,25 +76,28 @@ export default function ParticipantTable() {
   }, [visibleColumns]);
 
   const filteredItems = React.useMemo(() => {
-    let filteredParticipants = [...participants];
+    let filteredCourses = [...courses];
 
     if (hasSearchFilter) {
-      const lowerCaseFilterValue = filterValue.toLowerCase();
-      filteredParticipants = filteredParticipants.filter((participant) => {
-        const fullName =
-          `${participant.first_name} ${participant.last_name}`.toLowerCase();
-        const reversedFullName =
-          `${participant.last_name} ${participant.first_name}`.toLowerCase();
-
-        return (
-          fullName.includes(lowerCaseFilterValue) ||
-          reversedFullName.includes(lowerCaseFilterValue)
-        );
-      });
+      filteredCourses = filteredCourses.filter(
+        (course) =>
+          course.course_name
+            .toLowerCase()
+            .includes(filterValue.toLowerCase()) ||
+          course.class_name.toLowerCase().includes(filterValue.toLowerCase())
+      );
+    }
+    if (
+      statusFilter !== "all" &&
+      Array.from(statusFilter).length !== statusOptions.length
+    ) {
+      filteredCourses = filteredCourses.filter((course) =>
+        Array.from(statusFilter).includes(course.status)
+      );
     }
 
-    return filteredParticipants;
-  }, [participants, filterValue]);
+    return filteredCourses;
+  }, [courses, filterValue, statusFilter]);
 
   const pages = Math.ceil(filteredItems.length / rowsPerPage);
 
@@ -99,9 +109,9 @@ export default function ParticipantTable() {
   }, [page, filteredItems, rowsPerPage]);
 
   const sortedItems = React.useMemo(() => {
-    return [...items].sort((a: Participant, b: Participant) => {
-      const first = a[sortDescriptor.column as keyof Participant] as number;
-      const second = b[sortDescriptor.column as keyof Participant] as number;
+    return [...items].sort((a: Course, b: Course) => {
+      const first = a[sortDescriptor.column as keyof Course] as number;
+      const second = b[sortDescriptor.column as keyof Course] as number;
       const cmp = first < second ? -1 : first > second ? 1 : 0;
 
       return sortDescriptor.direction === "descending" ? -cmp : cmp;
@@ -109,8 +119,8 @@ export default function ParticipantTable() {
   }, [sortDescriptor, items]);
 
   const renderCell = React.useCallback(
-    (participant: Participant, columnKey: React.Key) => {
-      const cellValue = participant[columnKey as keyof Participant];
+    (course: Course, columnKey: React.Key) => {
+      const cellValue = course[columnKey as keyof Course];
 
       switch (columnKey) {
         case "course-name":
@@ -119,6 +129,17 @@ export default function ParticipantTable() {
           return <div>{cellValue}</div>;
         case "quarter":
           return <div>{cellValue}</div>;
+        case "status":
+          return (
+            <Chip
+              className="capitalize"
+              color={statusColorMap[course.status]}
+              size="sm"
+              variant="flat"
+            >
+              {cellValue}
+            </Chip>
+          );
         case "actions":
           return (
             <div className="relative flex justify-end items-center gap-2">
@@ -129,7 +150,8 @@ export default function ParticipantTable() {
                   </Button>
                 </DropdownTrigger>
                 <DropdownMenu>
-                  <DropdownItem>View</DropdownItem>
+                  <DropdownItem>View Course Details</DropdownItem>
+                  <DropdownItem>View Class Details</DropdownItem>
                   <DropdownItem>Edit</DropdownItem>
                   <DropdownItem>Delete</DropdownItem>
                 </DropdownMenu>
@@ -184,13 +206,45 @@ export default function ParticipantTable() {
           <Input
             isClearable
             className="w-full sm:max-w-[44%]"
-            placeholder="Search by participant name..."
+            placeholder="Search by course or class name..."
             startContent={<SearchIcon />}
             value={filterValue}
             onClear={() => onClear()}
             onValueChange={onSearchChange}
           />
           <div className="flex gap-3">
+            <Dropdown>
+              <DropdownTrigger className="hidden sm:flex">
+                <Button
+                  className="bg-light-gray text-strong-purple"
+                  endContent={<ChevronDownIcon className="text-small" />}
+                  variant="flat"
+                >
+                  Status
+                </Button>
+              </DropdownTrigger>
+              <DropdownMenu
+                disallowEmptySelection
+                aria-label="Table Columns"
+                closeOnSelect={false}
+                selectedKeys={statusFilter}
+                selectionMode="multiple"
+                onSelectionChange={setStatusFilter}
+              >
+                {statusOptions.map((status) => (
+                  <DropdownItem key={status.uid} className="capitalize">
+                    {capitalize(status.name)}
+                  </DropdownItem>
+                ))}
+              </DropdownMenu>
+            </Dropdown>
+            <Button
+              className="bg-light-gray text-strong-purple"
+              color="primary"
+              endContent={<PlusIcon />}
+            >
+              Add New
+            </Button>
             <Dropdown>
               <DropdownTrigger className="hidden sm:flex">
                 <Button
@@ -216,18 +270,11 @@ export default function ParticipantTable() {
                 ))}
               </DropdownMenu>
             </Dropdown>
-            <Button
-              className="bg-light-gray text-strong-purple"
-              color="primary"
-              endContent={<PlusIcon />}
-            >
-              Add New
-            </Button>
           </div>
         </div>
         <div className="flex justify-between items-center">
           <span className="text-default-400 text-small">
-            Total {participants.length} participants
+            Total {courses.length} courses
           </span>
           <label className="flex items-center text-default-400 text-small">
             Rows per page:
@@ -238,8 +285,6 @@ export default function ParticipantTable() {
               <option value="5">5</option>
               <option value="10">10</option>
               <option value="15">15</option>
-              <option value="25" selected>25</option>
-              <option value="50">50</option>
             </select>
           </label>
         </div>
@@ -247,10 +292,11 @@ export default function ParticipantTable() {
     );
   }, [
     filterValue,
+    statusFilter,
     visibleColumns,
     onSearchChange,
     onRowsPerPageChange,
-    participants.length,
+    courses.length,
     hasSearchFilter,
   ]);
 
@@ -301,9 +347,9 @@ export default function ParticipantTable() {
       isHeaderSticky
       bottomContent={bottomContent}
       bottomContentPlacement="outside"
-      //   classNames={{
-      //     wrapper: "max-h-[382px]",
-      //   }}
+      classNames={{
+        wrapper: "max-h-[382px]",
+      }}
       selectedKeys={selectedKeys}
       selectionMode="multiple"
       sortDescriptor={sortDescriptor}
@@ -323,7 +369,7 @@ export default function ParticipantTable() {
           </TableColumn>
         )}
       </TableHeader>
-      <TableBody emptyContent={"No participants found"} items={sortedItems}>
+      <TableBody emptyContent={"No courses found"} items={sortedItems}>
         {(item) => (
           <TableRow key={item.id}>
             {(columnKey) => (
