@@ -27,23 +27,30 @@ import { VerticalDotsIcon } from "@/components/icons/VerticalDotsIcon";
 import { ChevronDownIcon } from "@/components/icons/ChevronDownIcon";
 import { SearchIcon } from "@/components/icons/SearchIcon";
 import { capitalize } from "@/utils/capitalize";
-import { Course } from "./page";
+import { ClassDetails } from "@/lib/api/type";
 
 const columns = [
   { name: "ID", uid: "id", sortable: true },
-  { name: "COURSE NAME", uid: "course_name", sortable: true },
-  { name: "YEAR", uid: "year", sortable: true },
-  { name: "QUARTER", uid: "quarter", sortable: true },
-  { name: "ACTIONS", uid: "actions" },
+  { name: "CLASS NAME", uid: "name", sortable: true },
+  { name: "AGE GROUP", uid: "ageGroup", sortable: true },
+  { name: "SCHEDULE", uid: "schedule" },
+  { name: "PARTICIPANT ENROLLED", uid: "participant_enrolled", sortable: true },
+  { name: "PARTICIPANT PAID", uid: "participant_paid", sortable: true },
 ];
 
-const INITIAL_VISIBLE_COLUMNS = ["course_name", "year", "quarter", "actions"];
+const INITIAL_VISIBLE_COLUMNS = [
+  "name",
+  "ageGroup",
+  "schedule",
+  "participant_enrolled",
+  "participant_paid",
+];
 
-type CourseTableProps = {
-  courseList: Course[];
+type ClassTableProps = {
+  classList: ClassDetails[];
 };
 
-export default function CourseTable({ courseList }: CourseTableProps) {
+export default function ClassTable({ classList }: ClassTableProps) {
   const [filterValue, setFilterValue] = React.useState("");
   const [selectedKeys, setSelectedKeys] = React.useState<Selection>(
     new Set([])
@@ -70,16 +77,16 @@ export default function CourseTable({ courseList }: CourseTableProps) {
   }, [visibleColumns]);
 
   const filteredItems = React.useMemo(() => {
-    let filteredCourses = [...courseList];
+    let filteredClasses = [...classList];
 
     if (hasSearchFilter) {
-      filteredCourses = filteredCourses.filter((course) =>
-        course.course_name.toLowerCase().includes(filterValue.toLowerCase())
+      filteredClasses = filteredClasses.filter((classItem) =>
+        classItem.name.toLowerCase().includes(filterValue.toLowerCase())
       );
     }
 
-    return filteredCourses;
-  }, [courseList, filterValue]);
+    return filteredClasses;
+  }, [classList, filterValue]);
 
   const pages = Math.ceil(filteredItems.length / rowsPerPage);
 
@@ -91,9 +98,9 @@ export default function CourseTable({ courseList }: CourseTableProps) {
   }, [page, filteredItems, rowsPerPage]);
 
   const sortedItems = React.useMemo(() => {
-    return [...items].sort((a: Course, b: Course) => {
-      const first = a[sortDescriptor.column as keyof Course] as string;
-      const second = b[sortDescriptor.column as keyof Course] as string;
+    return [...items].sort((a: ClassDetails, b: ClassDetails) => {
+      const first = a[sortDescriptor.column as keyof ClassDetails] as string;
+      const second = b[sortDescriptor.column as keyof ClassDetails] as string;
       const cmp = first < second ? -1 : first > second ? 1 : 0;
 
       return sortDescriptor.direction === "descending" ? -cmp : cmp;
@@ -101,23 +108,11 @@ export default function CourseTable({ courseList }: CourseTableProps) {
   }, [sortDescriptor, items]);
 
   const renderCell = React.useCallback(
-    (course: Course, columnKey: React.Key) => {
-      const cellValue = course[columnKey as keyof Course];
-
-      if (Array.isArray(cellValue)) {
-        return (
-          <div>
-            {cellValue.map((item) => (
-              <div key={item.classId}>
-                {item.classId}: {item.name}
-              </div>
-            ))}
-          </div>
-        );
-      }
+    (classItem: ClassDetails, columnKey: React.Key) => {
+      const cellValue = classItem[columnKey as keyof ClassDetails];
 
       switch (columnKey) {
-        case "course-name":
+        case "name":
           return <div>{cellValue}</div>;
         case "year":
           return <div>{cellValue}</div>;
@@ -133,7 +128,11 @@ export default function CourseTable({ courseList }: CourseTableProps) {
                   </Button>
                 </DropdownTrigger>
                 <DropdownMenu>
-                  <DropdownItem>View</DropdownItem>
+                  <DropdownItem
+                    href={`/course-list/64c0f8bdfd6f9d3c123f45ab/${classItem.id}`}
+                  >
+                    View
+                  </DropdownItem>
                   <DropdownItem>Edit</DropdownItem>
                   <DropdownItem>Delete</DropdownItem>
                 </DropdownMenu>
@@ -188,7 +187,7 @@ export default function CourseTable({ courseList }: CourseTableProps) {
           <Input
             isClearable
             className="w-full sm:max-w-[44%]"
-            placeholder="Search by course name..."
+            placeholder="Search by class name..."
             startContent={<SearchIcon />}
             value={filterValue}
             onClear={() => onClear()}
@@ -231,7 +230,7 @@ export default function CourseTable({ courseList }: CourseTableProps) {
         </div>
         <div className="flex justify-between items-center">
           <span className="text-default-400 text-small">
-            Total {courseList.length} courses
+            Total {classList.length} classes
           </span>
           <label className="flex items-center text-default-400 text-small">
             Rows per page:
@@ -252,7 +251,7 @@ export default function CourseTable({ courseList }: CourseTableProps) {
     visibleColumns,
     onSearchChange,
     onRowsPerPageChange,
-    courseList.length,
+    classList.length,
     hasSearchFilter,
   ]);
 
@@ -325,7 +324,7 @@ export default function CourseTable({ courseList }: CourseTableProps) {
           </TableColumn>
         )}
       </TableHeader>
-      <TableBody emptyContent={"No courses found"} items={sortedItems}>
+      <TableBody emptyContent={"No classes found"} items={sortedItems}>
         {(item) => (
           <TableRow key={item.id}>
             {(columnKey) => (

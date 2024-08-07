@@ -129,7 +129,9 @@ export default function ParticipantTable() {
                   </Button>
                 </DropdownTrigger>
                 <DropdownMenu>
-                  <DropdownItem>View</DropdownItem>
+                  <DropdownItem href="/participants/matt-dickerson">
+                    View
+                  </DropdownItem>
                   <DropdownItem>Edit</DropdownItem>
                   <DropdownItem>Delete</DropdownItem>
                 </DropdownMenu>
@@ -238,7 +240,9 @@ export default function ParticipantTable() {
               <option value="5">5</option>
               <option value="10">10</option>
               <option value="15">15</option>
-              <option value="25" selected>25</option>
+              <option value="25" selected>
+                25
+              </option>
               <option value="50">50</option>
             </select>
           </label>

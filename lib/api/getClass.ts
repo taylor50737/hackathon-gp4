@@ -5,7 +5,7 @@ import { IClass } from "@/lib/schema/ClassSchema";
 import Logging from "@/logging/logging";
 import { IStudent } from "@/lib/schema/StudentSchema";
 import { searchStudentsByClass } from "@/lib/query/student";
-import { ClassDetails } from "./page";
+import { ClassDetails } from "./type";
 
 export async function getClassByCourses(
   courseId: string

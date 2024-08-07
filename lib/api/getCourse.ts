@@ -1,6 +1,6 @@
 import { connectDb } from "@/lib/connection";
 import Logging from "@/logging/logging";
-import { Course } from "./page";
+import { Course } from "./type";
 import { getCourses } from "@/lib/query/course";
 
 export async function getAllCourses(): Promise<Course[] | null> {
