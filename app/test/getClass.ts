@@ -1,11 +1,11 @@
-import { Types } from 'mongoose';
-import { connectDb } from '@/lib/connection';
-import { searchClassesByCourse } from '@/lib/query/classes';
-import { IClass } from '@/lib/schema/ClassSchema';
-import Logging from '@/logging/logging';
-import { IStudent } from '@/lib/schema/StudentSchema';
-import { searchStudentsByClass } from '@/lib/query/student';
-import { ClassDetails } from './course-table';
+import { Types } from "mongoose";
+import { connectDb } from "@/lib/connection";
+import { searchClassesByCourse } from "@/lib/query/classes";
+import { IClass } from "@/lib/schema/ClassSchema";
+import Logging from "@/logging/logging";
+import { IStudent } from "@/lib/schema/StudentSchema";
+import { searchStudentsByClass } from "@/lib/query/student";
+import { ClassDetails } from "./page";
 
 export async function getClassByCourses(
   courseId: string
@@ -56,7 +56,7 @@ function countEnrolled(
     if (
       enrollmentDetails &&
       enrollmentDetails.status &&
-      enrollmentDetails.status?.toLowerCase() != 'withdraw'
+      enrollmentDetails.status?.toLowerCase() != "withdraw"
     ) {
       participantEnrolled = participantEnrolled + 1;
     }
@@ -79,7 +79,7 @@ function countPaid(
     if (
       enrollmentDetails &&
       enrollmentDetails.status &&
-      enrollmentDetails.status?.toLowerCase() === 'paid'
+      enrollmentDetails.status?.toLowerCase() === "paid"
     ) {
       participantPaid = participantPaid + 1;
     }
