@@ -26,26 +26,24 @@ import { PlusIcon } from "@/components/icons/PlusIcon";
 import { VerticalDotsIcon } from "@/components/icons/VerticalDotsIcon";
 import { ChevronDownIcon } from "@/components/icons/ChevronDownIcon";
 import { SearchIcon } from "@/components/icons/SearchIcon";
-import { columns, courses, statusOptions } from "./data";
 import { capitalize } from "@/utils/capitalize";
+import { Course } from "@/lib/api/type";
 
-const statusColorMap: Record<string, ChipProps["color"]> = {
-  active: "success",
-  closed: "danger",
-  paused: "warning",
-};
-
-const INITIAL_VISIBLE_COLUMNS = [
-  "course_name",
-  "year",
-  "quarter",
-  "status",
-  "actions",
+const columns = [
+  { name: "ID", uid: "id", sortable: true },
+  { name: "COURSE NAME", uid: "course_name", sortable: true },
+  { name: "YEAR", uid: "year", sortable: true },
+  { name: "QUARTER", uid: "quarter", sortable: true },
+  { name: "ACTIONS", uid: "actions" },
 ];
 
-type Course = (typeof courses)[0];
+const INITIAL_VISIBLE_COLUMNS = ["course_name", "year", "quarter", "actions"];
 
-export default function CourseTable() {
+type CourseTableProps = {
+  courseList: Course[];
+};
+
+export default function CourseTable({ courseList }: CourseTableProps) {
   const [filterValue, setFilterValue] = React.useState("");
   const [selectedKeys, setSelectedKeys] = React.useState<Selection>(
     new Set([])
@@ -53,7 +51,6 @@ export default function CourseTable() {
   const [visibleColumns, setVisibleColumns] = React.useState<Selection>(
     new Set(INITIAL_VISIBLE_COLUMNS)
   );
-  const [statusFilter, setStatusFilter] = React.useState<Selection>("all");
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
   const [sortDescriptor, setSortDescriptor] = React.useState<SortDescriptor>({
     column: "age",
@@ -73,24 +70,16 @@ export default function CourseTable() {
   }, [visibleColumns]);
 
   const filteredItems = React.useMemo(() => {
-    let filteredCourses = [...courses];
+    let filteredCourses = [...courseList];
 
     if (hasSearchFilter) {
       filteredCourses = filteredCourses.filter((course) =>
         course.course_name.toLowerCase().includes(filterValue.toLowerCase())
       );
     }
-    if (
-      statusFilter !== "all" &&
-      Array.from(statusFilter).length !== statusOptions.length
-    ) {
-      filteredCourses = filteredCourses.filter((course) =>
-        Array.from(statusFilter).includes(course.status)
-      );
-    }
 
     return filteredCourses;
-  }, [courses, filterValue, statusFilter]);
+  }, [courseList, filterValue]);
 
   const pages = Math.ceil(filteredItems.length / rowsPerPage);
 
@@ -103,8 +92,8 @@ export default function CourseTable() {
 
   const sortedItems = React.useMemo(() => {
     return [...items].sort((a: Course, b: Course) => {
-      const first = a[sortDescriptor.column as keyof Course] as number;
-      const second = b[sortDescriptor.column as keyof Course] as number;
+      const first = a[sortDescriptor.column as keyof Course] as string;
+      const second = b[sortDescriptor.column as keyof Course] as string;
       const cmp = first < second ? -1 : first > second ? 1 : 0;
 
       return sortDescriptor.direction === "descending" ? -cmp : cmp;
@@ -115,6 +104,18 @@ export default function CourseTable() {
     (course: Course, columnKey: React.Key) => {
       const cellValue = course[columnKey as keyof Course];
 
+      if (Array.isArray(cellValue)) {
+        return (
+          <div>
+            {cellValue.map((item) => (
+              <div key={item.classId}>
+                {item.classId}: {item.name}
+              </div>
+            ))}
+          </div>
+        );
+      }
+
       switch (columnKey) {
         case "course-name":
           return <div>{cellValue}</div>;
@@ -122,17 +123,6 @@ export default function CourseTable() {
           return <div>{cellValue}</div>;
         case "quarter":
           return <div>{cellValue}</div>;
-        case "status":
-          return (
-            <Chip
-              className="capitalize"
-              color={statusColorMap[course.status]}
-              size="sm"
-              variant="flat"
-            >
-              {cellValue}
-            </Chip>
-          );
         case "actions":
           return (
             <div className="relative flex justify-end items-center gap-2">
@@ -143,7 +133,7 @@ export default function CourseTable() {
                   </Button>
                 </DropdownTrigger>
                 <DropdownMenu>
-                  <DropdownItem>View</DropdownItem>
+                  <DropdownItem href={`/course-list/${course.id}`}>View</DropdownItem>
                   <DropdownItem>Edit</DropdownItem>
                   <DropdownItem>Delete</DropdownItem>
                 </DropdownMenu>
@@ -212,31 +202,6 @@ export default function CourseTable() {
                   endContent={<ChevronDownIcon className="text-small" />}
                   variant="flat"
                 >
-                  Status
-                </Button>
-              </DropdownTrigger>
-              <DropdownMenu
-                disallowEmptySelection
-                aria-label="Table Columns"
-                closeOnSelect={false}
-                selectedKeys={statusFilter}
-                selectionMode="multiple"
-                onSelectionChange={setStatusFilter}
-              >
-                {statusOptions.map((status) => (
-                  <DropdownItem key={status.uid} className="capitalize">
-                    {capitalize(status.name)}
-                  </DropdownItem>
-                ))}
-              </DropdownMenu>
-            </Dropdown>
-            <Dropdown>
-              <DropdownTrigger className="hidden sm:flex">
-                <Button
-                  className="bg-light-gray text-strong-purple"
-                  endContent={<ChevronDownIcon className="text-small" />}
-                  variant="flat"
-                >
                   Columns
                 </Button>
               </DropdownTrigger>
@@ -266,7 +231,7 @@ export default function CourseTable() {
         </div>
         <div className="flex justify-between items-center">
           <span className="text-default-400 text-small">
-            Total {courses.length} courses
+            Total {courseList.length} courses
           </span>
           <label className="flex items-center text-default-400 text-small">
             Rows per page:
@@ -284,11 +249,10 @@ export default function CourseTable() {
     );
   }, [
     filterValue,
-    statusFilter,
     visibleColumns,
     onSearchChange,
     onRowsPerPageChange,
-    courses.length,
+    courseList.length,
     hasSearchFilter,
   ]);
 
