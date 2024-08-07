@@ -28,13 +28,21 @@ export async function getParticipantsByCourse(
           async (classObj) => await searchStudentsByClass(classObj.classId)
         )
       );
+
       // Flatten the array and remove null values
       const flattenedStudentList = studentList
         .flat()
         .filter((student) => student != null);
+
       // Remove duplicate students
       if (flattenedStudentList.length > 0) {
-        const uniqueStudentList = Array.from(new Set(flattenedStudentList));
+        const uniqueStudentMap = new Map<string, IStudent>();
+
+        flattenedStudentList.forEach((student) => {
+          uniqueStudentMap.set(student._id.toString(), student);
+        });
+
+        const uniqueStudentList = Array.from(uniqueStudentMap.values());
         return uniqueStudentList;
       }
     }
