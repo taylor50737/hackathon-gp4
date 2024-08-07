@@ -36,6 +36,7 @@ const columns = [
   { name: "SCHEDULE", uid: "schedule" },
   { name: "PARTICIPANT ENROLLED", uid: "participant_enrolled", sortable: true },
   { name: "PARTICIPANT PAID", uid: "participant_paid", sortable: true },
+  { name: "ACTIONS", uid: "actions" },
 ];
 
 const INITIAL_VISIBLE_COLUMNS = [
@@ -44,6 +45,7 @@ const INITIAL_VISIBLE_COLUMNS = [
   "schedule",
   "participant_enrolled",
   "participant_paid",
+  "actions",
 ];
 
 type ClassTableProps = {
