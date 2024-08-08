@@ -1,5 +1,25 @@
 import { Types } from 'mongoose';
 import ClassModel, { IClass } from '../schema/ClassSchema';
+import { IRawClass } from '../api/addData';
+import { convertToObjectId } from '@/utils/convertToObjectId';
+import Logging from '@/logging/logging';
+
+export function convertClassObjectId(classObj: IRawClass): IClass {
+  return {
+    _id: convertToObjectId(classObj._id),
+    name: classObj.name,
+    ...(classObj.ageGroup && { ageGroup: classObj.ageGroup }),
+    schedule: classObj.schedule,
+    course: {
+      courseId: convertToObjectId(classObj.course.courseId),
+      name: classObj.course.name,
+    },
+    ...(classObj.students && {
+      students: classObj.students.map((studId) => convertToObjectId(studId)),
+    }),
+    ...(classObj.status && { status: classObj.status }),
+  };
+}
 
 /**
  * Add one or more classes into the database.
@@ -9,6 +29,7 @@ import ClassModel, { IClass } from '../schema/ClassSchema';
  */
 export async function addClasses(classes: IClass | IClass[]): Promise<any> {
   const result = await ClassModel.create(classes);
+  Logging.info('Classes added to database.');
   return result;
 }
 
