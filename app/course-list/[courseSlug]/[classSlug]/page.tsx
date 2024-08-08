@@ -11,7 +11,6 @@ export default async function CourseDetailPage({
   const classId = new Types.ObjectId(params.classSlug);
   const participantList = (await searchStudentsByClass(classId)) ?? [];
   const restructuredParticipantList = restructureStudentData(participantList);
-  console.log(restructuredParticipantList);
 
   return (
     <div className="flex flex-1 py-4 h-screen sm:h-fit flex-col space-y-2 px-4 gap-4">
