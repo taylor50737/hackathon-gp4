@@ -1,11 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Types } from "mongoose";
 
 import SubHeader from "@/components/ui/sub-header";
 import ParticipantCourseTable from "./course-table";
 import avatar1 from "public/avatar_1.png";
+import { getEnrolledClassByStudentId } from "@/lib/api/getClass";
 
-export default function ParticipantProfilePage() {
+export default async function ParticipantProfilePage() {
+  const enrolledClassList = await getEnrolledClassByStudentId(new Types.ObjectId("64c0f90a7e6b9e2b90234567"));
+  console.log(enrolledClassList);
   return (
     <div className="flex flex-1 py-4 h-screen sm:h-fit flex-col space-y-2 px-4 gap-4">
       <SubHeader header="Participant Profile" />
