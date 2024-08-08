@@ -3,7 +3,10 @@ import { connectDb } from "@/lib/connection";
 import { searchClassesByCourse } from "@/lib/query/classes";
 import { IClass } from "@/lib/schema/ClassSchema";
 import Logging from "@/logging/logging";
-import { IStudent } from "@/lib/schema/StudentSchema";
+import StudentModel, {
+  IClassEnrolled,
+  IStudent,
+} from "@/lib/schema/StudentSchema";
 import { searchStudentsByClass } from "@/lib/query/student";
 import { ClassDetails } from "./type";
 
@@ -40,6 +43,18 @@ export async function getClassByCourses(
     Logging.error(`Database connection error: ${error}`);
     return null;
   }
+}
+
+export async function getEnrolledClassByStudentId(
+  studentId: Types.ObjectId
+): Promise<IClassEnrolled[] | null> {
+  const studentDocument = await StudentModel.findById(studentId);
+
+  if (studentDocument && studentDocument.classEnrolled.length > 0) {
+    return studentDocument.classEnrolled;
+  }
+
+  return null;
 }
 
 function countEnrolled(
