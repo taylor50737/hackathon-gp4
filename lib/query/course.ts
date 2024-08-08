@@ -1,5 +1,21 @@
 import { Types } from 'mongoose';
 import CourseModel, { ICourse } from '../schema/CourseSchema';
+import { IRawCourse } from '../api/addData';
+import { convertToObjectId } from '@/utils/convertToObjectId';
+import Logging from '@/logging/logging';
+
+export function convertCourseObjectId(course: IRawCourse): ICourse {
+  return {
+    ...course,
+    _id: convertToObjectId(course._id),
+    classes: course.classes.map((classObj) => {
+      return {
+        ...classObj,
+        classId: convertToObjectId(classObj.classId),
+      };
+    }),
+  };
+}
 
 /**
  * Add one or more courses into the database.
@@ -9,6 +25,7 @@ import CourseModel, { ICourse } from '../schema/CourseSchema';
  */
 export async function addCourses(courses: ICourse | ICourse[]): Promise<any> {
   const result = await CourseModel.create(courses);
+  Logging.info('Courses added to database.');
   return result;
 }
 

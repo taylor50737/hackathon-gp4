@@ -1,0 +1,190 @@
+[
+  {
+    "_id": "64c0fa6afd6f9d3c123f45d5",
+    "name": "Spring 2024 Specific Skills Classes (Ages 10-14)",
+    "ageGroup": "10-14",
+    "year": 2024,
+    "quarter": "Spring",
+    "classes": [
+      {
+        "classId": "64c0fa7afd6f9d3c123f45d6",
+        "name": "Anime Creators (Age 10-14)"
+      },
+      {
+        "classId": "64c0fa8afd6f9d3c123f45d7",
+        "name": "Inkspire Expressive Writing (Age 10-14)"
+      },
+      {
+        "classId": "64c0fa9afd6f9d3c123f45d8",
+        "name": "Robo Engineers (Age 10-14)"
+      }
+    ]
+  },
+  {
+    "_id": "64c0fcbafd6f9d3c123f45f3",
+    "name": "Spring 2024 Kinder Enrichment Class",
+    "ageGroup": "4-6",
+    "year": 2024,
+    "quarter": "Spring",
+    "classes": [
+      {
+        "classId": "64c0fcbafd6f9d3c123f45f4",
+        "name": "Watercolour Wonderland (Age 4-6)"
+      },
+      {
+        "classId": "64c0fcbafd6f9d3c123f45f5",
+        "name": "Art with Emotions (Age 4-6)"
+      },
+      {
+        "classId": "64c0fcbafd6f9d3c123f45f6",
+        "name": "Chef-in-Training (Age 4-6)"
+      },
+      {
+        "classId": "64c0fcbafd6f9d3c123f45f7",
+        "name": "Eco-Adventurers (Age 4-6)"
+      },
+      {
+        "classId": "64c0fcbafd6f9d3c123f45f8",
+        "name": "Fruity Funland (Age 4-6)"
+      }
+    ]
+  },
+  {
+    "_id": "f85e247f897d42cabec9e9dd",
+    "name": "Summer 2024 Saturday Classes",
+    "year": 2024,
+    "quarter": "Summer",
+    "classes": [
+      {
+        "classId": "9b659c14d62e408aac8bc38e",
+        "name": "Scratch (Age 6-9)"
+      },
+      {
+        "classId": "85eff78a87b245dea74dbaef",
+        "name": "Javascript & Python (Age 10 - 14)"
+      },
+      {
+        "classId": "f1d9a085a50c47e3bc8dde24",
+        "name": "Mixed sports Saturdays (Age 6-10)"
+      }
+    ]
+  },
+  {
+    "_id": "af1e0daf12e041d9b460193f",
+    "name": "Summer 2024 S.T.E.A.M. Camp (Age 6-9)",
+    "ageGroup": "6-9",
+    "year": 2024,
+    "quarter": "Summer",
+    "classes": [
+      {
+        "classId": "c894107797384fae9b2c3436",
+        "name": "Kids Can Cook (Age 6-9)"
+      },
+
+      {
+        "classId": "c6d2c065ab454616a99aa0cc",
+        "name": "Van Gogh's Little Artists (Age 6-9)"
+      },
+      {
+        "classId": "aace2c5c55794267935c58c6",
+        "name": "Nature Seekers Adventure (Age 6-9)"
+      },
+      {
+        "classId": "bbac84835fd34753987d8466",
+        "name": "Animazing Character Creation Camp (Age 6-9)"
+      },
+      {
+        "classId": "e9f0cbfbe0924bd7865029ee",
+        "name": "Lego Lab (Age 6-9)"
+      },
+      {
+        "classId": "81883b7fe9fc4319963be2c0",
+        "name": "Chaotic Concert Carnival (Age 6-9)"
+      },
+      {
+        "classId": "c692e47113d8443a9823a06f",
+        "name": "Little Edison's Laboratory (Age 6-9)"
+      },
+      {
+        "classId": "f4c72aac0d2b43a4aae94370",
+        "name": "NASA Space Station (Age 6-9)"
+      },
+      {
+        "classId": "ca29e1704b034ca08c0c547c",
+        "name": "The Sustainable You (Age 6-9)"
+      }
+    ]
+  },
+  {
+    "_id": "d4da0692a67148748d48c8ec",
+    "name": "Summer 2024 Kinder Enrichment Camp (Age 4-6)",
+    "ageGroup": "4-6",
+    "year": 2024,
+    "quarter": "Summer",
+    "classes": [
+      {
+        "classId": "7043845123094d3e8a341520",
+        "name": "Watercolour Wonderland (Age 4-6)"
+      },
+      {
+        "classId": "9fc0deb036dd4a17a18bc73a",
+        "name": "Art with Emotions (Age 4-6)"
+      }
+    ]
+  },
+  {
+    "_id": "90b66dbb67384666a60f400a",
+    "name": "Summer 2024 Specific Skills Camp (Age 10-14)",
+    "ageGroup": "10-14",
+    "year": 2024,
+    "quarter": "Summer",
+    "classes": [
+      {
+        "classId": "3b8d0d3e7eb54ace804dd501",
+        "name": "Ink and Imagination Art Camp (Age 10-14)"
+      },
+      {
+        "classId": "f9374dbc9a7a49b5b9df007c",
+        "name": "Young Leaders Bootcamp (Age 10-14)"
+      },
+      {
+        "classId": "5b00fa95ebcd409c86635fa1",
+        "name": "Digital ArtVenture (Age 10-14)"
+      }
+    ]
+  },
+
+  {
+    "_id": "bb64db2774f74e9bb8a9756d",
+    "name": "Summer 2024 Kinder Enrichment Camp (Age 4-6)",
+    "ageGroup": "4-6",
+    "year": 2024,
+    "quarter": "Summer",
+    "classes": [
+      {
+        "classId": "30e1c79acd504acd952d596a",
+        "name": "Goodbye Summer, Hello School (Age 4-6)"
+      },
+      {
+        "classId": "4f742120aae74738bed1d643",
+        "name": "Eco-Adventurers (Age 4-6)"
+      }
+    ]
+  },
+  {
+    "_id": "66b452f3ac2f5304b1837579",
+    "name": "Fall 2024 Specific Skills Class",
+    "year": 2024,
+    "quarter": "Fall",
+    "classes": [
+      {
+        "classId": "66b45306c9b7374d4518d830",
+        "name": "Nature Seekers Adventure"
+      },
+      {
+        "classId": "66b45311c57b5af6598ec75e",
+        "name": "Junior Chef Discovery Class"
+      }
+    ]
+  }
+]
