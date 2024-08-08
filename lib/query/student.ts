@@ -1,6 +1,24 @@
 import { Types } from 'mongoose';
 import StudentModel, { IStudent } from '../schema/StudentSchema';
 import ClassModel from '../schema/ClassSchema';
+import { convertToObjectId } from '@/utils/convertToObjectId';
+import { IRawStudent } from '../api/addData';
+import Logging from '@/logging/logging';
+
+export function convertStudentObjectId(student: IRawStudent): IStudent {
+  return {
+    ...student,
+    _id: convertToObjectId(student._id),
+    ...(student.dob && { dob: new Date(student.dob) }),
+    classEnrolled: student.classEnrolled.map((classEnrolled) => {
+      return {
+        ...classEnrolled,
+        classId: convertToObjectId(classEnrolled.classId),
+        enrolledTime: new Date(classEnrolled.enrolledTime),
+      };
+    }),
+  };
+}
 
 /**
  * Add one or more students into the database.
@@ -12,6 +30,7 @@ export async function addStudents(
   students: IStudent | IStudent[]
 ): Promise<any> {
   const result = await StudentModel.create(students);
+  Logging.info('Students added to database.');
   return result;
 }
 

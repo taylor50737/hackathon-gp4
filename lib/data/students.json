@@ -1,0 +1,768 @@
+[
+  {
+    "_id": "d00cae28f2bd445ab09f5008",
+    "firstName": "Kenny",
+    "lastName": "Son",
+    "gender": "Female",
+    "dob": "2015-01-14",
+    "address": "182 Dufferin Avenue, Toronto, M5J 2N8",
+    "phone": "6477224502",
+    "email": "yhbdlcmpdz@iubridge.com",
+    "specialNeeds": "N/A",
+    "guardian": {
+      "fullName": "Sophia White",
+      "relationship": "Parent"
+    },
+    "emergency": {
+      "fullName": "Sophia White",
+      "relationship": "Parent",
+      "phone": 6748902344
+    },
+    "credits": 50,
+    "classEnrolled": [
+      {
+        "classId": "64c0fa7afd6f9d3c123f45d6",
+        "className": "Anime Creators (Age 10-14)",
+        "courseName": "Spring 2024 Specific Skills Classes",
+        "schedule": "Mar 1 to 25 (Fri) 4pm-6pm",
+        "enrolledTime": "2024-01-01T15:12:00.000Z",
+        "beforeAfterCamp": "Do not need",
+        "pickUpArrange": "Sophia White 6748902344",
+        "fee": 80,
+        "status": "Paid"
+      },
+
+      {
+        "classId": "f9374dbc9a7a49b5b9df007c",
+        "className": "Young Leaders Bootcamp (Age 10-14)",
+        "courseName": "Summer 2024 Specific Skills Camp",
+        "schedule": "July 2 to 5 (Tue- Fri) 9am-3pm",
+        "enrolledTime": "2024-06-01T15:12:00.000Z",
+        "beforeAfterCamp": "After Care (3:00pm to 6:00pm)",
+        "pickUpArrange": "Sophia White 6748902344",
+        "fee": 250,
+        "status": "Paid"
+      },
+      {
+        "classId": "f1d9a085a50c47e3bc8dde24",
+        "className": "Mixed sports Saturdays (Age 6-10)",
+        "courseName": "Summer 2024 Saturday Classes",
+        "schedule": "Jun 22 to Aug 24 (Sat) 9am-12pm",
+        "enrolledTime": "2024-06-20T21:45:00.000Z",
+        "pickUpArrange": "Sophia White 6748902344",
+        "fee": 47.5,
+        "status": "Paid",
+        "discount": "5%"
+      },
+      {
+        "classId": "85eff78a87b245dea74dbaef",
+        "className": "Javascript & Python (Age 10 - 14)",
+        "courseName": "Summer 2024 Saturday Classes",
+        "schedule": "Jun 22 to Aug 24 (Sat) 2:30pm-4pm - 8 classes",
+        "enrolledTime": "2024-06-20T21:45:00.000Z",
+        "pickUpArrange": "Sophia White 6748902344",
+        "fee": 47.5,
+        "status": "Paid",
+        "discount": "5%"
+      },
+      {
+        "classId": "3b8d0d3e7eb54ace804dd501",
+        "className": "Ink and Imagination Art Camp (Age 10-14)",
+        "courseName": "Summer 2024 Specific Skills Camp",
+        "schedule": "July 2 to 5 (Tue- Fri) 9am-3pm",
+        "enrolledTime": "2024-06-10T21:35:00.000Z",
+        "beforeAfterCamp": "Before Care (7:30am to 9:00am)",
+        "pickUpArrange": "Sophia White 6748902344",
+        "fee": 240,
+        "status": "Paid",
+        "discount": "20"
+      },
+      {
+        "classId": "5b00fa95ebcd409c86635fa1",
+        "className": "Digital ArtVenture (Age 10-14)",
+        "courseName": "Summer 2024 Specific Skills Camp",
+        "schedule": "July 29 to August 2 (Mon- Fri) 9am-3pm",
+        "enrolledTime": "2024-06-10T21:35:00.000Z",
+        "beforeAfterCamp": "Before Care (7:30am to 9:00am)",
+        "pickUpArrange": "Sophia White 6748902344",
+        "fee": 240,
+        "status": "Paid",
+        "discount": "20"
+      },
+      {
+        "classId": "ca29e1704b034ca08c0c547c",
+        "className": "The Sustainable You (Age 6-9)",
+        "courseName": "Summer 2024 S.T.E.A.M. Camp",
+        "schedule": "Aug 19 to Aug 23 (Mon-Fri) 9am-3pm",
+        "enrolledTime": "2024-07-10T21:35:00.000Z",
+        "beforeAfterCamp": "Before Care (7:30am to 9:00am)",
+        "pickUpArrange": "Sophia White 6748902344",
+        "fee": 240,
+        "status": "Paid",
+        "discount": "20"
+      }
+    ]
+  },
+  {
+    "_id": "043fc9cc7d1a4d61940b52b4",
+    "firstName": "John",
+    "lastName": "Ma",
+    "gender": "Male",
+    "dob": "2015-11-12",
+    "phone": "6748902112",
+    "email": "abc@gmail.com",
+    "address": "4300 Steeles Ave E, Markham, L3R 0Y5",
+    "specialNeeds": "No",
+    "guardian": {
+      "fullName": "Nim Ma",
+      "relationship": "Parent"
+    },
+    "emergency": {
+      "fullName": "Dassy",
+      "phone": "6748901234",
+      "relationship": "Mother"
+    },
+    "credits": 10,
+    "classEnrolled": [
+      {
+        "classId": "f9374dbc9a7a49b5b9df007c",
+        "className": "Young Leaders Bootcamp (Age 10-14)",
+        "courseName": "Summer 2024 Specific Skills Camp",
+        "schedule": "July 2 to 5 (Tue- Fri) 9am-3pm",
+        "enrolledTime": "2024-06-02T15:12:00.000Z",
+        "beforeAfterCamp": "Before Care (7:30am to 9:00am)",
+        "pickUpArrange": "Nim Ma 6748901234",
+        "fee": 250,
+        "status": "Paid"
+      },
+      {
+        "classId": "c894107797384fae9b2c3436",
+        "className": "Kids Can Cook (Age 6-9)",
+        "courseName": "Summer 2024 S.T.E.A.M. Camp",
+        "schedule": "July 2 to 5 (Tue-Fri) 9am-3pm",
+        "enrolledTime": "2024-06-15T11:24:00.000Z",
+        "beforeAfterCamp": "Before Care (7:30am to 9:00am)",
+        "pickUpArrange": "Nim Ma 6748901234",
+        "fee": 240,
+        "status": "Paid",
+        "discount": "5%"
+      },
+      {
+        "classId": "aace2c5c55794267935c58c6",
+        "className": "Nature Seekers Adventure (Age 6-9)",
+        "courseName": "Summer 2024 S.T.E.A.M. Camp",
+        "schedule": "July 8 to 12 (Mon-Fri) 9am-3pm",
+        "enrolledTime": "2024-06-15T11:24:00.000Z",
+        "beforeAfterCamp": "Before Care (7:30am to 9:00am)",
+        "pickUpArrange": "Nim Ma 6748901234",
+        "fee": 240,
+        "status": "Paid",
+        "discount": "5%"
+      },
+      {
+        "classId": "3b8d0d3e7eb54ace804dd501",
+        "className": "Ink and Imagination Art Camp (Age 10-14)",
+        "courseName": "Summer 2024 Specific Skills Camp",
+        "schedule": "July 2 to 5 (Tue- Fri) 9am-3pm",
+        "enrolledTime": "2024-06-01T11:24:00.000Z",
+        "beforeAfterCamp": "Before Care (7:30am to 9:00am)",
+        "pickUpArrange": "Nim Ma 6748902344",
+        "fee": 240,
+        "status": "Paid"
+      }
+    ]
+  },
+  {
+    "_id": "4eaee32be7d548409e3e9fb1",
+    "firstName": "Peter",
+    "lastName": "Chan",
+    "gender": "Male",
+    "dob": "2016-02-12",
+    "phone": "123456789",
+    "email": "123456789@cics",
+    "address": "Welcome Centre, Markham, 1A1B2B",
+    "specialNeeds": "N/A",
+    "guardian": {
+      "fullName": "Peterson Chan",
+      "relationship": "Parent"
+    },
+    "emergency": {
+      "fullName": "Peterson",
+      "phone": "987654321",
+      "relationship": "Father"
+    },
+    "classEnrolled": [
+      {
+        "classId": "64c0fa7afd6f9d3c123f45d6",
+        "className": "Anime Creators (Age 10-14)",
+        "courseName": "Spring 2024 Specific Skills Classes",
+        "schedule": "Mar 1 to 25 (Fri) 4pm-6pm",
+        "enrolledTime": "2024-01-01T16:12:00.000Z",
+        "beforeAfterCamp": "Do not need",
+        "pickUpArrange": "Peterson Chan 6748902344",
+        "fee": 80,
+        "status": "Paid"
+      },
+      {
+        "classId": "7043845123094d3e8a341520",
+        "className": "Watercolour Wonderland (Age 4-6)",
+        "courseName": "Summer 2024 Kinder Enrichment Camp",
+        "schedule": "July 2 to 5 (Tue-Fri) 9am-3pm",
+        "enrolledTime": "2024-06-01T10:12:00.000Z",
+        "beforeAfterCamp": "Do not need",
+        "pickUpArrange": "Peterson Chan 6748902344",
+        "fee": 240,
+        "status": "Not Paid"
+      },
+      {
+        "classId": "9fc0deb036dd4a17a18bc73a",
+        "className": "Art with Emotions (Age 4-6)",
+        "courseName": "Summer 2024 Kinder Enrichment Camp",
+        "schedule": "July 8 to 12 (Mon-Fri) 9am-3pm",
+        "enrolledTime": "2024-06-01T10:12:00.000Z",
+        "beforeAfterCamp": "Do not need",
+        "pickUpArrange": "Peterson Chan 6748902344",
+        "fee": 240,
+        "status": "Withdraw"
+      },
+      {
+        "classId": "f9374dbc9a7a49b5b9df007c",
+        "className": "Young Leaders Bootcamp (Age 10-14)",
+        "courseName": "Summer 2024 Specific Skills Camp",
+        "schedule": "July 2 to 5 (Tue- Fri) 9am-3pm",
+        "enrolledTime": "2024-06-01T10:12:00.000Z",
+        "beforeAfterCamp": "Before and After Care (7:30am to 9:00am & 3:00pm to 6:00pm)",
+        "pickUpArrange": "Peterson Chan 6748902344",
+        "fee": 250,
+        "status": "Paid"
+      },
+      {
+        "classId": "3b8d0d3e7eb54ace804dd501",
+        "className": "Ink and Imagination Art Camp (Age 10-14)",
+        "courseName": "Summer 2024 Specific Skills Camp",
+        "schedule": "July 2 to 5 (Tue- Fri) 9am-3pm",
+        "enrolledTime": "2024-06-16T10:12:00.000Z",
+        "beforeAfterCamp": "Before Care (7:30am to 9:00am)",
+        "pickUpArrange": "Peterson 6748902344",
+        "fee": 250,
+        "status": "Paid"
+      }
+    ]
+  },
+  {
+    "_id": "70a1bba5eb50472da4446a75",
+    "firstName": "Harry",
+    "lastName": "Sum",
+    "gender": "Transgender",
+    "dob": "2018-04-12",
+    "phone": "6473901289",
+    "email": "harry@gmail.com",
+    "address": "Unit 1001,18 Denson Drive, Toronto, M3R 0M2",
+    "specialNeeds": "N/A",
+    "guardian": {
+      "fullName": "Sunny Sum",
+      "relationship": "Grandparent"
+    },
+    "emergency": {
+      "fullName": "Pan Herry",
+      "phone": "6474891203",
+      "relationship": "Mum"
+    },
+    "classEnrolled": [
+      {
+        "classId": "bbac84835fd34753987d8466",
+        "className": "Animazing Character Creation Camp (Age 6-9)",
+        "courseName": "Summer 2024 S.T.E.A.M. Camp",
+        "schedule": "July 22 to 26 (Mon-Fri) 9am-3pm",
+        "enrolledTime": "2024-06-01T11:12:00.000Z",
+        "beforeAfterCamp": "After Care (3:00pm to 6:00pm)",
+        "pickUpArrange": "Sunny Sum",
+        "fee": 240,
+        "status": "Paid"
+      },
+      {
+        "classId": "f9374dbc9a7a49b5b9df007c",
+        "className": "Young Leaders Bootcamp (Age 10-14)",
+        "courseName": "Summer 2024 Specific Skills Camp",
+        "schedule": "July 2 to 5 (Tue- Fri) 9am-3pm",
+        "enrolledTime": "2024-06-03T15:12:00.000Z",
+        "beforeAfterCamp": "After Care (3:00pm to 6:00pm)",
+        "pickUpArrange": "Sunny Sum",
+        "fee": 250,
+        "status": "Paid"
+      },
+      {
+        "classId": "3b8d0d3e7eb54ace804dd501",
+        "className": "Ink and Imagination Art Camp (Age 10-14)",
+        "courseName": "Summer 2024 Specific Skills Camp",
+        "schedule": "July 2 to 5 (Tue- Fri) 9am-3pm",
+        "enrolledTime": "2024-06-17T10:12:00.000Z",
+        "beforeAfterCamp": "Before Care (7:30am to 9:00am)",
+        "pickUpArrange": "Nim Ma 6748902344",
+        "fee": 250,
+        "status": "Paid"
+      }
+    ]
+  },
+  {
+    "_id": "6eec9d7b76274b6bacc0b669",
+    "firstName": "John",
+    "lastName": "Canny",
+    "gender": "Male",
+    "dob": "2012-10-10",
+    "phone": "6481091234",
+    "email": "JohnSmith@hotmail.com",
+    "address": "10 Annon St, Toronto, M5E 1M5",
+    "specialNeeds": "Epi-Pen",
+    "guardian": {
+      "fullName": "Smith John",
+      "relationship": "Guardian"
+    },
+    "emergency": {
+      "fullName": "Smith John",
+      "phone": "6749021892",
+      "relationship": "Guardian"
+    },
+    "classEnrolled": [
+      {
+        "classId": "64c0fa7afd6f9d3c123f45d6",
+        "className": "Anime Creators (Age 10-14)",
+        "courseName": "Spring 2024 Specific Skills Classes",
+        "schedule": "Mar 1 to 25 (Fri) 4pm-6pm",
+        "enrolledTime": "2024-01-02T17:12:00.000Z",
+        "pickUpArrange": "Smith John 6749021892",
+        "fee": 80,
+        "status": "Paid"
+      },
+      {
+        "classId": "64c0fa8afd6f9d3c123f45d7",
+        "className": "Inkspire Expressive Writing (Age 10-14)",
+        "courseName": "Spring 2024 Specific Skills Classes",
+        "schedule": "Mar 2 to Apr 5 (Fri) 4pm-6pm",
+        "enrolledTime": "2024-01-02T17:12:00.000Z",
+        "pickUpArrange": "Smith John 6749021892",
+        "fee": 80,
+        "status": "Paid"
+      },
+      {
+        "classId": "64c0fa9afd6f9d3c123f45d8",
+        "className": "Robo Engineers (Age 10-14)",
+        "courseName": "Spring 2024 Specific Skills Classes",
+        "schedule": "Mar 8 to Apr 13 (Fri) 4pm-6pm",
+        "enrolledTime": "2024-01-02T17:12:00.000Z",
+        "pickUpArrange": "Smith John 6749021892",
+        "fee": 80,
+        "status": "Paid"
+      },
+      {
+        "classId": "64c0fcbafd6f9d3c123f45f4",
+        "className": "Watercolour Wonderland (Age 4-6)",
+        "courseName": "Spring 2024 Kinder Enrichment Class",
+        "schedule": "Mar 2 to Apr 5 (Sat) 10am-12pm",
+        "enrolledTime": "2024-02-01T16:12:00.000Z",
+        "pickUpArrange": "Smith John 6749021892",
+        "fee": 80,
+        "status": "Paid"
+      },
+      {
+        "classId": "64c0fcbafd6f9d3c123f45f5",
+        "className": "Art with Emotions (Age 4-6)",
+        "courseName": "Spring 2024 Kinder Enrichment Class",
+        "schedule": "Mar 2 to Apr 5 (Sat) 8am-10pm",
+        "enrolledTime": "2024-02-01T16:12:00.000Z",
+        "pickUpArrange": "Smith John 6749021892",
+        "fee": 80,
+        "status": "Paid"
+      },
+      {
+        "classId": "64c0fcbafd6f9d3c123f45f6",
+        "className": "Chef-in-Training (Age 4-6)",
+        "courseName": "Spring 2024 Kinder Enrichment Class",
+        "schedule": "Mar 2 to Apr 5 (Sat) 12pm-2pm",
+        "enrolledTime": "2024-02-01T16:12:00.000Z",
+        "pickUpArrange": "Smith John 6749021892",
+        "fee": 80,
+        "status": "Paid"
+      },
+      {
+        "classId": "64c0fcbafd6f9d3c123f45f7",
+        "className": "Eco-Adventurers (Age 4-6)",
+        "courseName": "Spring 2024 Kinder Enrichment Class",
+        "schedule": "Mar 2 to Apr 5 (Sat) 2pm-4pm",
+        "enrolledTime": "2024-02-01T16:12:00.000Z",
+        "pickUpArrange": "Smith John 6749021892",
+        "fee": 80,
+        "status": "Paid"
+      },
+      {
+        "classId": "64c0fcbafd6f9d3c123f45f8",
+        "className": "Fruity Funland (Age 4-6)",
+        "courseName": "Spring 2024 Kinder Enrichment Class",
+        "schedule": "Mar 2 to Apr 5 (Sat) 4pm-6pm",
+        "enrolledTime": "2024-02-01T16:12:00.000Z",
+        "pickUpArrange": "Smith John 6749021892",
+        "fee": 80,
+        "status": "Paid"
+      },
+      {
+        "classId": "f9374dbc9a7a49b5b9df007c",
+        "className": "Young Leaders Bootcamp (Age 10-14)",
+        "courseName": "Summer 2024 Specific Skills Camp",
+        "schedule": "July 2 to 5 (Tue- Fri) 9am-3pm",
+        "enrolledTime": "2024-06-04T15:12:00.000Z",
+        "beforeAfterCamp": "After Care (3:00pm to 6:00pm)",
+        "pickUpArrange": "Smith John 6749021892",
+        "fee": 250,
+        "status": "Paid"
+      },
+      {
+        "classId": "30e1c79acd504acd952d596a",
+        "className": "Goodbye Summer, Hello School (Age 4-6)",
+        "courseName": "Summer 2024 Kinder Enrichment Camp",
+        "schedule": "Aug 19 to 23 (Mon-Fri) 9am-3pm",
+        "enrolledTime": "2024-06-06T10:12:00.000Z",
+        "beforeAfterCamp": "After Care (3:00pm to 6:00pm)",
+        "pickUpArrange": "Smith John 6749021892",
+        "fee": 240,
+        "status": "Paid"
+      },
+      {
+        "classId": "4f742120aae74738bed1d643",
+        "className": "Eco-Adventurers (Age 4-6)",
+        "courseName": "Summer 2024 Kinder Enrichment Camp",
+        "schedule": "July 22 to 26 (Mon-Fri) 9am-3pm",
+        "enrolledTime": "2024-06-01T10:12:00.000Z",
+        "beforeAfterCamp": "After Care (3:00pm to 6:00pm)",
+        "pickUpArrange": "Smith John 6749021892",
+        "fee": 240,
+        "status": "Withdraw"
+      },
+      {
+        "classId": "f4c72aac0d2b43a4aae94370",
+        "className": "NASA Space Station (Age 6-9)",
+        "courseName": "Summer 2024 S.T.E.A.M. Camp (Age 6-9)",
+        "schedule": "Aug 12 to Aug 16 (Mon-Fri) 9am-3pm",
+        "enrolledTime": "2024-06-01T10:12:00.000Z",
+        "beforeAfterCamp": "After Care (3:00pm to 6:00pm)",
+        "pickUpArrange": "Smith John 6749021892",
+        "fee": 240,
+        "status": "Paid"
+      },
+      {
+        "classId": "81883b7fe9fc4319963be2c0",
+        "className": "Chaotic Concert Carnival (Age 6-9)",
+        "courseName": "Summer 2024 S.T.E.A.M. Camp",
+        "schedule": "July 22 to 26 (Mon-Fri) 9am-3pm",
+        "enrolledTime": "2024-06-06T10:12:00.000Z",
+        "beforeAfterCamp": "After Care (3:00pm to 6:00pm)",
+        "pickUpArrange": "Smith John 6749021892",
+        "fee": 240,
+        "status": "Paid"
+      },
+      {
+        "classId": "c692e47113d8443a9823a06f",
+        "className": "Little Edison's Laboratory (Age 6-9)",
+        "courseName": "Summer 2024 S.T.E.A.M. Camp (Age 6-9)",
+        "schedule": "July 29 to Aug 2 (Mon-Fri) 9am-3pm",
+        "enrolledTime": "2024-06-06T10:12:00.000Z",
+        "beforeAfterCamp": "Before Care (7:30am to 9:00am)",
+        "pickUpArrange": "Smith John 6749021892",
+        "fee": 240,
+        "status": "Withdraw"
+      },
+      {
+        "classId": "3b8d0d3e7eb54ace804dd501",
+        "className": "Ink and Imagination Art Camp (Age 10-14)",
+        "courseName": "Summer 2024 Specific Skills Camp",
+        "schedule": "July 2 to 5 (Tue- Fri) 9am-3pm",
+        "enrolledTime": "2024-06-17T11:12:00.000Z",
+        "beforeAfterCamp": "Before Care (7:30am to 9:00am)",
+        "pickUpArrange": "Smith John 6749021892",
+        "fee": 250,
+        "status": "Paid"
+      }
+    ]
+  },
+  {
+    "_id": "710d4237fba6491e8d5bd7a0",
+    "firstName": "susan",
+    "lastName": "kwong",
+    "gender": "Woman",
+    "dob": "2013-11-02",
+    "phone": "6471902893",
+    "email": "sunny123@yahoo.com",
+    "address": "20 Sunny Avenue, Richmond Hill, L4R1U9",
+    "specialNeeds": "N",
+    "guardian": {
+      "fullName": "Cameron Grey",
+      "relationship": "Grandparent"
+    },
+    "emergency": {
+      "fullName": "Cameron Grey",
+      "phone": "6471092893",
+      "relationship": "Grandpa"
+    },
+    "classEnrolled": [
+      {
+        "classId": "64c0fa7afd6f9d3c123f45d6",
+        "className": "Anime Creators (Age 10-14)",
+        "courseName": "Spring 2024 Specific Skills Classes",
+        "schedule": "Mar 1 to 25 (Fri) 4pm-6pm",
+        "enrolledTime": "2024-01-03T16:12:00.000Z",
+        "beforeAfterCamp": "Do not need",
+        "pickUpArrange": "Cameron Grey 6748902344",
+        "fee": 80,
+        "status": "Paid"
+      },
+      {
+        "classId": "64c0fa8afd6f9d3c123f45d7",
+        "className": "Inkspire Expressive Writing (Age 10-14)",
+        "courseName": "Spring 2024 Specific Skills Classes",
+        "schedule": "Mar 2 to Apr 5 (Fri) 4pm-6pm",
+        "enrolledTime": "2024-01-03T16:12:00.000Z",
+        "pickUpArrange": "Cameron Grey 6749021892",
+        "fee": 80,
+        "status": "Paid"
+      },
+      {
+        "classId": "64c0fa9afd6f9d3c123f45d8",
+        "className": "Robo Engineers (Age 10-14)",
+        "courseName": "Spring 2024 Specific Skills Classes",
+        "schedule": "Mar 8 to Apr 13 (Fri) 4pm-6pm",
+        "enrolledTime": "2024-01-03T16:12:00.000Z",
+        "pickUpArrange": "Cameron Grey 6749021892",
+        "fee": 80,
+        "status": "Paid"
+      },
+      {
+        "classId": "64c0fcbafd6f9d3c123f45f4",
+        "className": "Watercolour Wonderland (Age 4-6)",
+        "courseName": "Spring 2024 Kinder Enrichment Class",
+        "schedule": "Mar 2 to Apr 5 (Sat) 10am-12pm",
+        "enrolledTime": "2024-02-02T16:12:00.000Z",
+        "pickUpArrange": "Cameron Grey 6749021892",
+        "fee": 80,
+        "status": "Paid"
+      },
+      {
+        "classId": "64c0fcbafd6f9d3c123f45f5",
+        "className": "Art with Emotions (Age 4-6)",
+        "courseName": "Spring 2024 Kinder Enrichment Class",
+        "schedule": "Mar 2 to Apr 5 (Sat) 8am-10pm",
+        "enrolledTime": "2024-02-02T16:12:00.000Z",
+        "pickUpArrange": "Cameron Grey 6749021892",
+        "fee": 80,
+        "status": "Paid"
+      },
+      {
+        "classId": "64c0fcbafd6f9d3c123f45f6",
+        "className": "Chef-in-Training (Age 4-6)",
+        "courseName": "Spring 2024 Kinder Enrichment Class",
+        "schedule": "Mar 2 to Apr 5 (Sat) 12pm-2pm",
+        "enrolledTime": "2024-02-02T16:12:00.000Z",
+        "pickUpArrange": "Cameron Grey 6749021892",
+        "fee": 80,
+        "status": "Paid"
+      },
+      {
+        "classId": "64c0fcbafd6f9d3c123f45f7",
+        "className": "Eco-Adventurers (Age 4-6)",
+        "courseName": "Spring 2024 Kinder Enrichment Class",
+        "schedule": "Mar 2 to Apr 5 (Sat) 2pm-4pm",
+        "enrolledTime": "2024-02-02T16:12:00.000Z",
+        "pickUpArrange": "Cameron Grey 6749021892",
+        "fee": 80,
+        "status": "Paid"
+      },
+      {
+        "classId": "64c0fcbafd6f9d3c123f45f8",
+        "className": "Fruity Funland (Age 4-6)",
+        "courseName": "Spring 2024 Kinder Enrichment Class",
+        "schedule": "Mar 2 to Apr 5 (Sat) 4pm-6pm",
+        "enrolledTime": "2024-02-02T16:12:00.000Z",
+        "pickUpArrange": "Cameron Grey 6749021892",
+        "fee": 80,
+        "status": "Paid"
+      },
+      {
+        "classId": "ca29e1704b034ca08c0c547c",
+        "className": "The Sustainable You (Age 6-9)",
+        "courseName": "Summer 2024 S.T.E.A.M. Camp",
+        "schedule": "Aug 19 to Aug 23 (Mon-Fri) 9am-3pm",
+        "enrolledTime": "2024-06-16T10:12:00.000Z",
+        "beforeAfterCamp": "Do not need",
+        "pickUpArrange": "Cameron Grey 6749021892",
+        "fee": 240,
+        "status": "Not Paid"
+      },
+      {
+        "classId": "c6d2c065ab454616a99aa0cc",
+        "className": "Van Gogh's Little Artists (Age 6-9)",
+        "courseName": "Summer 2024 S.T.E.A.M. Camp",
+        "schedule": "July 8 to 12 (Mon-Fri) 9am-3pm",
+        "enrolledTime": "2024-06-16T10:12:00.000Z",
+        "beforeAfterCamp": "Do not need",
+        "pickUpArrange": "Cameron Grey 6749021892",
+        "fee": 240,
+        "status": "Not Paid"
+      },
+      {
+        "classId": "e9f0cbfbe0924bd7865029ee",
+        "className": "Lego Lab (Age 6-9)",
+        "courseName": "Summer 2024 S.T.E.A.M. Camp (Age 6-9)",
+        "schedule": "July 15 to 19 (Mon-Fri) 9am-3pm",
+        "enrolledTime": "2024-06-16T10:12:00.000Z",
+        "beforeAfterCamp": "After Care (3:00pm to 6:00pm)",
+        "pickUpArrange": "Cameron Grey 6749021892",
+        "fee": 240,
+        "status": "Paid"
+      },
+      {
+        "classId": "81883b7fe9fc4319963be2c0",
+        "className": "Chaotic Concert Carnival (Age 6-9)",
+        "courseName": "Summer 2024 S.T.E.A.M. Camp",
+        "schedule": "July 22 to 26 (Mon-Fri) 9am-3pm",
+        "enrolledTime": "2024-06-06T10:12:00.000Z",
+        "beforeAfterCamp": "After Care (3:00pm to 6:00pm)",
+        "pickUpArrange": "Cameron Grey 6749021892",
+        "fee": 240,
+        "status": "Paid"
+      },
+      {
+        "classId": "3b8d0d3e7eb54ace804dd501",
+        "className": "Ink and Imagination Art Camp (Age 10-14)",
+        "courseName": "Summer 2024 Specific Skills Camp",
+        "schedule": "July 2 to 5 (Tue- Fri) 9am-3pm",
+        "enrolledTime": "2024-06-17T14:12:00.000Z",
+        "beforeAfterCamp": "Before Care (7:30am to 9:00am)",
+        "pickUpArrange": "Cameron Grey 6748902344",
+        "fee": 250,
+        "status": "Paid"
+      }
+    ]
+  },
+  {
+    "_id": "5b5e3edaef1f4867b22272ec",
+    "firstName": "Lai",
+    "lastName": "Papp",
+    "gender": "Male",
+    "dob": "2018-05-22",
+    "phone": "4168547771",
+    "email": "laiko@hotmail.com",
+    "address": "2826 Bay Street, Toronto, M5J2R8",
+    "specialNeeds": "No",
+    "guardian": {
+      "fullName": "Latihovic",
+      "relationship": "Grandparent"
+    },
+    "emergency": {
+      "fullName": "Latihovic",
+      "phone": "4168547771",
+      "relationship": "Grandmother"
+    },
+    "classEnrolled": [
+      {
+        "classId": "64c0fa7afd6f9d3c123f45d6",
+        "className": "Anime Creators (Age 10-14)",
+        "courseName": "Spring 2024 Specific Skills Classes",
+        "schedule": "Mar 1 to 25 (Fri) 4pm-6pm",
+        "enrolledTime": "2024-01-04T16:12:00.000Z",
+        "pickUpArrange": "Latihovic 6748902344",
+        "fee": 80,
+        "status": "Paid"
+      },
+      {
+        "classId": "64c0fa8afd6f9d3c123f45d7",
+        "className": "Inkspire Expressive Writing (Age 10-14)",
+        "courseName": "Spring 2024 Specific Skills Classes",
+        "schedule": "Mar 2 to Apr 5 (Fri) 4pm-6pm",
+        "enrolledTime": "2024-01-04T16:12:00.000Z",
+        "pickUpArrange": "Latihovic 6749021892",
+        "fee": 80,
+        "status": "Withdraw"
+      },
+      {
+        "classId": "64c0fa9afd6f9d3c123f45d8",
+        "className": "Robo Engineers (Age 10-14)",
+        "courseName": "Spring 2024 Specific Skills Classes",
+        "schedule": "Mar 8 to Apr 13 (Fri) 4pm-6pm",
+        "enrolledTime": "2024-01-04T16:12:00.000Z",
+        "pickUpArrange": "Latihovic 6749021892",
+        "fee": 80,
+        "status": "Paid"
+      },
+      {
+        "classId": "64c0fcbafd6f9d3c123f45f4",
+        "className": "Watercolour Wonderland (Age 4-6)",
+        "courseName": "Spring 2024 Kinder Enrichment Class",
+        "schedule": "Mar 2 to Apr 5 (Sat) 10am-12pm",
+        "enrolledTime": "2024-02-04T16:12:00.000Z",
+        "pickUpArrange": "Latihovic 6749021892",
+        "fee": 80,
+        "status": "Paid"
+      },
+      {
+        "classId": "64c0fcbafd6f9d3c123f45f5",
+        "className": "Art with Emotions (Age 4-6)",
+        "courseName": "Spring 2024 Kinder Enrichment Class",
+        "schedule": "Mar 2 to Apr 5 (Sat) 8am-10pm",
+        "enrolledTime": "2024-02-04T16:12:00.000Z",
+        "pickUpArrange": "Latihovic 6749021892",
+        "fee": 80,
+        "status": "Paid"
+      },
+      {
+        "classId": "64c0fcbafd6f9d3c123f45f6",
+        "className": "Chef-in-Training (Age 4-6)",
+        "courseName": "Spring 2024 Kinder Enrichment Class",
+        "schedule": "Mar 2 to Apr 5 (Sat) 12pm-2pm",
+        "enrolledTime": "2024-02-04T16:12:00.000Z",
+        "pickUpArrange": "Latihovic 6749021892",
+        "fee": 80,
+        "status": "Paid"
+      },
+      {
+        "classId": "64c0fcbafd6f9d3c123f45f7",
+        "className": "Eco-Adventurers (Age 4-6)",
+        "courseName": "Spring 2024 Kinder Enrichment Class",
+        "schedule": "Mar 2 to Apr 5 (Sat) 2pm-4pm",
+        "enrolledTime": "2024-02-04T16:12:00.000Z",
+        "pickUpArrange": "Latihovic 6749021892",
+        "fee": 80,
+        "status": "Paid"
+      },
+      {
+        "classId": "64c0fcbafd6f9d3c123f45f8",
+        "className": "Fruity Funland (Age 4-6)",
+        "courseName": "Spring 2024 Kinder Enrichment Class",
+        "schedule": "Mar 2 to Apr 5 (Sat) 4pm-6pm",
+        "enrolledTime": "2024-02-04T16:12:00.000Z",
+        "pickUpArrange": "Latihovic 6749021892",
+        "fee": 80,
+        "status": "Paid"
+      },
+      {
+        "classId": "9b659c14d62e408aac8bc38e",
+        "className": "Scratch (Age 6-9)",
+        "courseName": "Summer 2024 Saturday Classes",
+        "schedule": "Jun 22 to Aug 24 (Sat) 11am-12pm - 8 classes",
+        "enrolledTime": "2024-06-10T10:12:00.000Z",
+        "pickUpArrange": "Latihovic 6749021892",
+        "fee": 80,
+        "status": "Paid",
+        "discount": "50"
+      },
+      {
+        "classId": "3b8d0d3e7eb54ace804dd501",
+        "className": "Ink and Imagination Art Camp (Age 10-14)",
+        "courseName": "Summer 2024 Specific Skills Camp",
+        "schedule": "July 2 to 5 (Tue- Fri) 9am-3pm",
+        "enrolledTime": "2024-06-17T14:15:00.000Z",
+        "beforeAfterCamp": "Before Care (7:30am to 9:00am)",
+        "pickUpArrange": "Latihovic 6748902344",
+        "fee": 250,
+        "status": "Paid"
+      }
+    ]
+  }
+]
