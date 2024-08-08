@@ -1,0 +1,399 @@
+[
+  {
+    "_id": "64c0fa7afd6f9d3c123f45d6",
+    "name": "Anime Creators (Age 10-14)",
+    "ageGroup": "10-14",
+    "schedule": "Mar 1 to 25 (Fri) 4pm-6pm",
+    "course": {
+      "courseId": "64c0fa6afd6f9d3c123f45d5",
+      "name": "Spring 2024 Specific Skills Classes"
+    },
+    "students": [
+      "d00cae28f2bd445ab09f5008",
+      "4eaee32be7d548409e3e9fb1",
+      "6eec9d7b76274b6bacc0b669",
+      "710d4237fba6491e8d5bd7a0",
+      "5b5e3edaef1f4867b22272ec"
+    ],
+    "status": "closed"
+  },
+  {
+    "_id": "64c0fa8afd6f9d3c123f45d7",
+    "name": "Inkspire Expressive Writing (Age 10-14)",
+    "ageGroup": "10-14",
+    "schedule": "Mar 2 to Apr 5 (Fri) 4pm-6pm",
+    "course": {
+      "courseId": "64c0fa6afd6f9d3c123f45d5",
+      "name": "Spring 2024 Specific Skills Classes"
+    },
+    "students": [
+      "6eec9d7b76274b6bacc0b669",
+      "710d4237fba6491e8d5bd7a0",
+      "5b5e3edaef1f4867b22272ec"
+    ],
+    "status": "paused"
+  },
+  {
+    "_id": "64c0fa9afd6f9d3c123f45d8",
+    "name": "Robo Engineers (Age 10-14)",
+    "ageGroup": "10-14",
+    "schedule": "Mar 8 to Apr 13 (Fri) 4pm-6pm",
+    "course": {
+      "courseId": "64c0fa6afd6f9d3c123f45d5",
+      "name": "Spring 2024 Specific Skills Classes"
+    },
+    "students": [
+      "6eec9d7b76274b6bacc0b669",
+      "710d4237fba6491e8d5bd7a0",
+      "5b5e3edaef1f4867b22272ec"
+    ],
+    "status": "closed"
+  },
+  {
+    "_id": "64c0fcbafd6f9d3c123f45f4",
+    "name": "Watercolour Wonderland (Age 4-6)",
+    "ageGroup": "4-6",
+    "schedule": "Mar 2 to Apr 5 (Sat) 10am-12pm",
+    "course": {
+      "courseId": "64c0fcbafd6f9d3c123f45f3",
+      "name": "Spring 2024 Kinder Enrichment Class"
+    },
+    "students": [
+      "6eec9d7b76274b6bacc0b669",
+      "710d4237fba6491e8d5bd7a0",
+      "5b5e3edaef1f4867b22272ec"
+    ],
+    "status": "closed"
+  },
+  {
+    "_id": "64c0fcbafd6f9d3c123f45f5",
+    "name": "Art with Emotions (Age 4-6)",
+    "ageGroup": "4-6",
+    "schedule": "Mar 2 to Apr 5 (Sat) 8am-10pm",
+    "course": {
+      "courseId": "64c0fcbafd6f9d3c123f45f3",
+      "name": "Spring 2024 Kinder Enrichment Class"
+    },
+    "students": [
+      "6eec9d7b76274b6bacc0b669",
+      "710d4237fba6491e8d5bd7a0",
+      "5b5e3edaef1f4867b22272ec"
+    ],
+    "status": "closed"
+  },
+  {
+    "_id": "64c0fcbafd6f9d3c123f45f6",
+    "name": "Chef-in-Training (Age 4-6)",
+    "ageGroup": "4-6",
+    "schedule": "Mar 2 to Apr 5 (Sat) 12pm-2pm",
+    "course": {
+      "courseId": "64c0fcbafd6f9d3c123f45f3",
+      "name": "Spring 2024 Kinder Enrichment Class"
+    },
+    "students": [
+      "6eec9d7b76274b6bacc0b669",
+      "710d4237fba6491e8d5bd7a0",
+      "5b5e3edaef1f4867b22272ec"
+    ],
+    "status": "closed"
+  },
+  {
+    "_id": "64c0fcbafd6f9d3c123f45f7",
+    "name": "Eco-Adventurers (Age 4-6)",
+    "ageGroup": "4-6",
+    "schedule": "Mar 2 to Apr 5 (Sat) 2pm-4pm",
+    "course": {
+      "courseId": "64c0fcbafd6f9d3c123f45f3",
+      "name": "Spring 2024 Kinder Enrichment Class"
+    },
+    "students": [
+      "6eec9d7b76274b6bacc0b669",
+      "710d4237fba6491e8d5bd7a0",
+      "5b5e3edaef1f4867b22272ec"
+    ],
+    "status": "closed"
+  },
+  {
+    "_id": "64c0fcbafd6f9d3c123f45f8",
+    "name": "Fruity Funland (Age 4-6)",
+    "ageGroup": "4-6",
+    "schedule": "Mar 2 to Apr 5 (Sat) 4pm-6pm",
+    "course": {
+      "courseId": "64c0fcbafd6f9d3c123f45f3",
+      "name": "Spring 2024 Kinder Enrichment Class"
+    },
+    "students": [
+      "6eec9d7b76274b6bacc0b669",
+      "710d4237fba6491e8d5bd7a0",
+      "5b5e3edaef1f4867b22272ec"
+    ],
+    "status": "closed"
+  },
+
+  {
+    "_id": "3b8d0d3e7eb54ace804dd501",
+    "name": "Ink and Imagination Art Camp (Age 10-14)",
+    "ageGroup": "10-14",
+    "schedule": "July 2 to 5 (Tue- Fri) 9am-3pm",
+    "course": {
+      "courseId": "90b66dbb67384666a60f400a",
+      "name": "Summer 2024 Specific Skills Camp (Age 10-14)"
+    },
+    "students": [
+      "043fc9cc7d1a4d61940b52b4",
+      "d00cae28f2bd445ab09f5008",
+      "4eaee32be7d548409e3e9fb1",
+      "70a1bba5eb50472da4446a75",
+      "6eec9d7b76274b6bacc0b669",
+      "710d4237fba6491e8d5bd7a0",
+      "5b5e3edaef1f4867b22272ec"
+    ],
+    "status": "closed"
+  },
+  {
+    "_id": "f9374dbc9a7a49b5b9df007c",
+    "name": "Young Leaders Bootcamp (Age 10-14)",
+    "ageGroup": "10-14",
+    "schedule": "July 2 to 5 (Tue- Fri) 9am-3pm",
+    "course": {
+      "courseId": "90b66dbb67384666a60f400a",
+      "name": "Summer 2024 Specific Skills Camp (Age 10-14)"
+    },
+    "students": [
+      "4eaee32be7d548409e3e9fb1",
+      "d00cae28f2bd445ab09f5008",
+      "043fc9cc7d1a4d61940b52b4",
+      "70a1bba5eb50472da4446a75",
+      "6eec9d7b76274b6bacc0b669"
+    ],
+    "status": "closed"
+  },
+  {
+    "_id": "7043845123094d3e8a341520",
+    "name": "Watercolour Wonderland (Age 4-6)",
+    "ageGroup": "4-6",
+    "schedule": "July 2 to 5 (Tue-Fri) 9am-3pm",
+    "course": {
+      "courseId": "d4da0692a67148748d48c8ec",
+      "name": "Summer 2024 Kinder Enrichment Camp (Age 4-6)"
+    },
+    "students": ["4eaee32be7d548409e3e9fb1"],
+    "status": "closed"
+  },
+  {
+    "_id": "c894107797384fae9b2c3436",
+    "name": "Kids Can Cook (Age 6-9)",
+    "ageGroup": "6-9",
+    "schedule": "July 2 to 5 (Tue- Fri) 9am-3pm",
+    "course": {
+      "courseId": "af1e0daf12e041d9b460193f",
+      "name": "Summer 2024 S.T.E.A.M. Camp (Age 6-9)"
+    },
+    "students": ["043fc9cc7d1a4d61940b52b4"],
+    "status": "closed"
+  },
+  {
+    "_id": "9fc0deb036dd4a17a18bc73a",
+    "name": "Art with Emotions (Age 4-6)",
+    "ageGroup": "4-6",
+    "schedule": "July 8 to 12 (Mon-Fri) 9am-3pm",
+    "course": {
+      "courseId": "d4da0692a67148748d48c8ec",
+      "name": "Summer 2024 Kinder Enrichment Camp (Age 4-6)"
+    },
+    "students": ["4eaee32be7d548409e3e9fb1"],
+    "status": "closed"
+  },
+  {
+    "_id": "c6d2c065ab454616a99aa0cc",
+    "name": "Van Gogh's Little Artists (Age 6-9)",
+    "ageGroup": "6-9",
+    "schedule": "July 8 to 12 (Mon-Fri) 9am-3pm",
+    "course": {
+      "courseId": "af1e0daf12e041d9b460193f",
+      "name": "Summer 2024 S.T.E.A.M. Camp (Age 6-9)"
+    },
+    "students": ["710d4237fba6491e8d5bd7a0"],
+    "status": "closed"
+  },
+  {
+    "_id": "aace2c5c55794267935c58c6",
+    "name": "Nature Seekers Adventure (Age 6-9)",
+    "ageGroup": "6-9",
+    "schedule": "July 8 to 12 (Mon-Fri) 9am-3pm",
+    "course": {
+      "courseId": "af1e0daf12e041d9b460193f",
+      "name": "Summer 2024 S.T.E.A.M. Camp (Age 6-9)"
+    },
+    "students": ["043fc9cc7d1a4d61940b52b4"],
+    "status": "closed"
+  },
+  {
+    "_id": "bbac84835fd34753987d8466",
+    "name": "Animazing Character Creation Camp (Age 6-9)",
+    "ageGroup": "6-9",
+    "schedule": "July 22 to 26 (Mon-Fri) 9am-3pm",
+    "course": {
+      "courseId": "af1e0daf12e041d9b460193f",
+      "name": "Summer 2024 S.T.E.A.M. Camp (Age 6-9)"
+    },
+    "students": ["70a1bba5eb50472da4446a75"],
+    "status": "active"
+  },
+  {
+    "_id": "85eff78a87b245dea74dbaef",
+    "name": "Javascript & Python (Age 10 - 14)",
+    "ageGroup": "10-14",
+    "schedule": "Jun 22 to Aug 24 (Sat) 2:30pm-4pm - 8 classes",
+    "course": {
+      "courseId": "f85e247f897d42cabec9e9dd",
+      "name": "Summer 2024 Saturday Classes"
+    },
+    "students": ["d00cae28f2bd445ab09f5008"],
+    "status": "active"
+  },
+  {
+    "_id": "f1d9a085a50c47e3bc8dde24",
+    "name": "Mixed sports Saturdays (Age 6-10)",
+    "ageGroup": "6-10",
+    "schedule": "Jun 22 to Aug 24 (Sat) 9am-12pm",
+    "course": {
+      "courseId": "f85e247f897d42cabec9e9dd",
+      "name": "Summer 2024 Saturday Classes"
+    },
+    "students": ["d00cae28f2bd445ab09f5008"],
+    "status": "active"
+  },
+  {
+    "_id": "4f742120aae74738bed1d643",
+    "name": "Eco-Adventurers (Age 4-6)",
+    "ageGroup": "4-6",
+    "schedule": "July 22 to 26 (Mon-Fri) 9am-3pm",
+    "course": {
+      "courseId": "bb64db2774f74e9bb8a9756d",
+      "name": "Summer 2024 Kinder Enrichment Camp (Age 4-6)"
+    },
+    "students": ["6eec9d7b76274b6bacc0b669"],
+    "status": "closed"
+  },
+  {
+    "_id": "e9f0cbfbe0924bd7865029ee",
+    "name": "Lego Lab (Age 6-9)",
+    "ageGroup": "6-9",
+    "schedule": "July 15 to 19 (Mon-Fri) 9am-3pm",
+    "course": {
+      "courseId": "af1e0daf12e041d9b460193f",
+      "name": "Summer 2024 S.T.E.A.M. Camp (Age 6-9)"
+    },
+    "students": ["710d4237fba6491e8d5bd7a0"],
+    "status": "closed"
+  },
+  {
+    "_id": "81883b7fe9fc4319963be2c0",
+    "name": "Chaotic Concert Carnival (Age 6-9)",
+    "ageGroup": "6-9",
+    "schedule": "July 22 to 26 (Mon-Fri) 9am-3pm",
+    "course": {
+      "courseId": "af1e0daf12e041d9b460193f",
+      "name": "Summer 2024 S.T.E.A.M. Camp (Age 6-9)"
+    },
+    "students": ["710d4237fba6491e8d5bd7a0", "6eec9d7b76274b6bacc0b669"],
+    "status": "closed"
+  },
+  {
+    "_id": "9b659c14d62e408aac8bc38e",
+    "name": "Scratch (Age 6-9)",
+    "ageGroup": "6-9",
+    "schedule": "Jun 22 to Aug 24 (Sat) 11am-12pm - 8 classes",
+    "course": {
+      "courseId": "f85e247f897d42cabec9e9dd",
+      "name": "Summer 2024 Saturday Classes"
+    },
+    "students": ["5b5e3edaef1f4867b22272ec"],
+    "status": "active"
+  },
+  {
+    "_id": "c692e47113d8443a9823a06f",
+    "name": "Little Edison's Laboratory (Age 6-9)",
+    "ageGroup": "6-9",
+    "schedule": "July 29 to Aug 2 (Mon-Fri) 9am-3pm",
+    "course": {
+      "courseId": "af1e0daf12e041d9b460193f",
+      "name": "Summer 2024 S.T.E.A.M. Camp (Age 6-9)"
+    },
+    "students": ["6eec9d7b76274b6bacc0b669"],
+    "status": "closed"
+  },
+  {
+    "_id": "5b00fa95ebcd409c86635fa1",
+    "name": "Digital ArtVenture (Age 10-14)",
+    "ageGroup": "10-14",
+    "schedule": "July 29 to August 2 (Mon- Fri) 9am-3pm",
+    "course": {
+      "courseId": "90b66dbb67384666a60f400a",
+      "name": "Summer 2024 Specific Skills Camp (Age 10-14)"
+    },
+    "students": ["d00cae28f2bd445ab09f5008"],
+    "status": "closed"
+  },
+  {
+    "_id": "f4c72aac0d2b43a4aae94370",
+    "name": "NASA Space Station (Age 6-9)",
+    "ageGroup": "6-9",
+    "schedule": "Aug 12 to Aug 16 (Mon-Fri) 9am-3pm",
+    "course": {
+      "courseId": "af1e0daf12e041d9b460193f",
+      "name": "Summer 2024 S.T.E.A.M. Camp (Age 6-9)"
+    },
+    "students": ["6eec9d7b76274b6bacc0b669"],
+    "status": "active"
+  },
+  {
+    "_id": "30e1c79acd504acd952d596a",
+    "name": "Goodbye Summer, Hello School (Age 4-6)",
+    "ageGroup": "4-6",
+    "schedule": "Aug 19 to 23 (Mon-Fri) 9am-3pm",
+    "course": {
+      "courseId": "bb64db2774f74e9bb8a9756d",
+      "name": "Summer 2024 Kinder Enrichment Camp (Age 4-6)"
+    },
+    "students": ["6eec9d7b76274b6bacc0b669"],
+    "status": "active"
+  },
+  {
+    "_id": "ca29e1704b034ca08c0c547c",
+    "name": "The Sustainable You (Age 6-9)",
+    "ageGroup": "6-9",
+    "schedule": "Aug 19 to Aug 23 (Mon-Fri) 9am-3pm",
+    "course": {
+      "courseId": "af1e0daf12e041d9b460193f",
+      "name": "Summer 2024 S.T.E.A.M. Camp (Age 6-9)"
+    },
+    "students": ["710d4237fba6491e8d5bd7a0", "ca29e1704b034ca08c0c547c"],
+    "status": "active"
+  },
+  {
+    "_id": "66b45306c9b7374d4518d830",
+    "name": "Nature Seekers Adventure",
+    "ageGroup": "10-16",
+    "schedule": "Sep 19 to Oct 20 (Sat) 9am-3pm",
+    "course": {
+      "courseId": "66b452f3ac2f5304b1837579",
+      "name": "Fall 2024 Specific Skills Class"
+    },
+    "students": [],
+    "status": "active"
+  },
+  {
+    "_id": "66b45311c57b5af6598ec75e",
+    "name": "Junior Chef Discovery Class",
+    "ageGroup": "10-16",
+    "schedule": "Sep 19 to Oct 20 (Sat) 3pm-5pm",
+    "course": {
+      "courseId": "66b452f3ac2f5304b1837579",
+      "name": "Fall 2024 Specific Skills Class"
+    },
+    "students": [],
+    "status": "active"
+  }
+]
