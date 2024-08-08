@@ -1,17 +1,17 @@
-import { Schema, model, models, Types } from 'mongoose';
+import { Schema, model, models, Types } from "mongoose";
 
-interface IGuardian {
+export interface IGuardian {
   fullName: string;
   relationship: string;
 }
 
-interface IEmergency {
+export interface IEmergency {
   fullName: string;
   phone: number;
   relationship: string;
 }
 
-interface IClassEnrolled {
+export interface IClassEnrolled {
   classId: Types.ObjectId;
   className: string;
   courseName: string;
@@ -59,7 +59,7 @@ const EmergencySchema = new Schema<IEmergency>(
 
 const ClassEnrolledSchema = new Schema<IClassEnrolled>(
   {
-    classId: { type: Schema.Types.ObjectId, ref: 'Class', required: true },
+    classId: { type: Schema.Types.ObjectId, ref: "Class", required: true },
     className: { type: String, required: true },
     courseName: { type: String, required: true },
     schedule: { type: String, required: true },
@@ -86,11 +86,11 @@ const StudentSchema = new Schema<IStudent>(
     guardian: { type: GuardianSchema },
     emergency: { type: EmergencySchema, required: true },
     credits: { type: Number },
-    classEnrolled: [{ type: ClassEnrolledSchema, requied: true }],
+    classEnrolled: [{ type: ClassEnrolledSchema, required: true }],
   },
-  { collection: 'Students' }
+  { collection: "Students" }
 );
 
 const StudentModel =
-  models.Students || model<IStudent>('Students', StudentSchema);
+  models.Students || model<IStudent>("Students", StudentSchema);
 export default StudentModel;

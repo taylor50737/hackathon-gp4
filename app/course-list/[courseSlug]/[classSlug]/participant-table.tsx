@@ -15,10 +15,8 @@ import {
   Dropdown,
   DropdownMenu,
   DropdownItem,
-  Chip,
   Pagination,
   Selection,
-  ChipProps,
   SortDescriptor,
 } from "@nextui-org/react";
 
@@ -27,32 +25,49 @@ import { VerticalDotsIcon } from "@/components/icons/VerticalDotsIcon";
 import { ChevronDownIcon } from "@/components/icons/ChevronDownIcon";
 import { SearchIcon } from "@/components/icons/SearchIcon";
 import { capitalize } from "@/utils/capitalize";
-import { ClassDetails } from "@/lib/api/type";
+import { IRestructuredStudent } from "./restructureData";
 
 const columns = [
   { name: "ID", uid: "id", sortable: true },
-  { name: "CLASS NAME", uid: "name", sortable: true },
-  { name: "AGE GROUP", uid: "ageGroup", sortable: true },
-  { name: "SCHEDULE", uid: "schedule" },
-  { name: "PARTICIPANT ENROLLED", uid: "participantEnrolled", sortable: true },
-  { name: "PARTICIPANT PAID", uid: "participantPaid", sortable: true },
+  { name: "FIRST NAME", uid: "firstName", sortable: true },
+  { name: "LAST NAME", uid: "lastName", sortable: true },
+  { name: "GENDER", uid: "gender", sortable: true },
+  { name: "DATE OF BIRTH", uid: "dob" },
+  { name: "PHONE", uid: "phone", sortable: true },
+  { name: "EMAIL", uid: "email" },
+  { name: "ADDRESS", uid: "address" },
+  { name: "SPECIAL NEEDS", uid: "specialNeeds", sortable: true },
+  { name: "GUARDIAN NAME", uid: "guardianFullName", sortable: true },
+  { name: "GUARDIAN RELATIONSHIP", uid: "guardianRelationship", sortable: true },
+  { name: "EMERGENCY FULL NAME", uid: "emergencyFullName", sortable: true },
+  { name: "EMERGENCY PHONE", uid: "emergencyPhone", sortable: true },
+  { name: "EMERGENCY RELATIONSHIP", uid: "emergencyRelationship", sortable: true },
+  { name: "CREDIT", uid: "credits", sortable: true },
   { name: "ACTIONS", uid: "actions" },
 ];
 
 const INITIAL_VISIBLE_COLUMNS = [
-  "name",
-  "ageGroup",
-  "schedule",
-  "participant_enrolled",
-  "participant_paid",
+  "firstName",
+  "lastName",
+  "gender",
+  "dob",
+  "phone",
+  "email",
+  "address",
+  "specialNeeds",
+  "guardianFullName",
+  "emergencyFullName",
+  "credits",
   "actions",
 ];
 
-type ClassTableProps = {
-  classList: ClassDetails[];
+type ParticipantTableProps = {
+  participantList: IRestructuredStudent[];
 };
 
-export default function ClassTable({ classList }: ClassTableProps) {
+export default function ParticipantTable({
+  participantList,
+}: ParticipantTableProps) {
   const [filterValue, setFilterValue] = React.useState("");
   const [selectedKeys, setSelectedKeys] = React.useState<Selection>(
     new Set([])
@@ -60,7 +75,7 @@ export default function ClassTable({ classList }: ClassTableProps) {
   const [visibleColumns, setVisibleColumns] = React.useState<Selection>(
     new Set(INITIAL_VISIBLE_COLUMNS)
   );
-  const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const [rowsPerPage, setRowsPerPage] = React.useState(25);
   const [sortDescriptor, setSortDescriptor] = React.useState<SortDescriptor>({
     column: "age",
     direction: "ascending",
@@ -79,16 +94,25 @@ export default function ClassTable({ classList }: ClassTableProps) {
   }, [visibleColumns]);
 
   const filteredItems = React.useMemo(() => {
-    let filteredClasses = [...classList];
+    let filteredParticipants = [...participantList];
 
     if (hasSearchFilter) {
-      filteredClasses = filteredClasses.filter((classItem) =>
-        classItem.name.toLowerCase().includes(filterValue.toLowerCase())
-      );
+      const lowerCaseFilterValue = filterValue.toLowerCase();
+      filteredParticipants = filteredParticipants.filter((participant) => {
+        const fullName =
+          `${participant.firstName} ${participant.lastName}`.toLowerCase();
+        const reversedFullName =
+          `${participant.lastName} ${participant.firstName}`.toLowerCase();
+
+        return (
+          fullName.includes(lowerCaseFilterValue) ||
+          reversedFullName.includes(lowerCaseFilterValue)
+        );
+      });
     }
 
-    return filteredClasses;
-  }, [classList, filterValue]);
+    return filteredParticipants;
+  }, [participantList, filterValue]);
 
   const pages = Math.ceil(filteredItems.length / rowsPerPage);
 
@@ -100,9 +124,9 @@ export default function ClassTable({ classList }: ClassTableProps) {
   }, [page, filteredItems, rowsPerPage]);
 
   const sortedItems = React.useMemo(() => {
-    return [...items].sort((a: ClassDetails, b: ClassDetails) => {
-      const first = a[sortDescriptor.column as keyof ClassDetails] as string;
-      const second = b[sortDescriptor.column as keyof ClassDetails] as string;
+    return [...items].sort((a: IRestructuredStudent, b: IRestructuredStudent) => {
+      const first = a[sortDescriptor.column as keyof IRestructuredStudent] as number;
+      const second = b[sortDescriptor.column as keyof IRestructuredStudent] as number;
       const cmp = first < second ? -1 : first > second ? 1 : 0;
 
       return sortDescriptor.direction === "descending" ? -cmp : cmp;
@@ -110,11 +134,11 @@ export default function ClassTable({ classList }: ClassTableProps) {
   }, [sortDescriptor, items]);
 
   const renderCell = React.useCallback(
-    (classItem: ClassDetails, columnKey: React.Key) => {
-      const cellValue = classItem[columnKey as keyof ClassDetails];
+    (course: IRestructuredStudent, columnKey: React.Key) => {
+      const cellValue = course[columnKey as keyof IRestructuredStudent];
 
       switch (columnKey) {
-        case "name":
+        case "course-name":
           return <div>{cellValue}</div>;
         case "year":
           return <div>{cellValue}</div>;
@@ -130,11 +154,7 @@ export default function ClassTable({ classList }: ClassTableProps) {
                   </Button>
                 </DropdownTrigger>
                 <DropdownMenu>
-                  <DropdownItem
-                    href={`/course-list/64c0f8bdfd6f9d3c123f45ab/${classItem.id}`}
-                  >
-                    View
-                  </DropdownItem>
+                  <DropdownItem href={`/course-list/${course.id}`}>View</DropdownItem>
                   <DropdownItem>Edit</DropdownItem>
                   <DropdownItem>Delete</DropdownItem>
                 </DropdownMenu>
@@ -147,7 +167,7 @@ export default function ClassTable({ classList }: ClassTableProps) {
     },
     []
   );
-
+  
   const onNextPage = React.useCallback(() => {
     if (page < pages) {
       setPage(page + 1);
@@ -189,7 +209,7 @@ export default function ClassTable({ classList }: ClassTableProps) {
           <Input
             isClearable
             className="w-full sm:max-w-[44%]"
-            placeholder="Search by class name..."
+            placeholder="Search by participant name..."
             startContent={<SearchIcon />}
             value={filterValue}
             onClear={() => onClear()}
@@ -232,7 +252,7 @@ export default function ClassTable({ classList }: ClassTableProps) {
         </div>
         <div className="flex justify-between items-center">
           <span className="text-default-400 text-small">
-            Total {classList.length} classes
+            Total {participantList.length} participants
           </span>
           <label className="flex items-center text-default-400 text-small">
             Rows per page:
@@ -243,6 +263,10 @@ export default function ClassTable({ classList }: ClassTableProps) {
               <option value="5">5</option>
               <option value="10">10</option>
               <option value="15">15</option>
+              <option value="25" selected>
+                25
+              </option>
+              <option value="50">50</option>
             </select>
           </label>
         </div>
@@ -253,7 +277,7 @@ export default function ClassTable({ classList }: ClassTableProps) {
     visibleColumns,
     onSearchChange,
     onRowsPerPageChange,
-    classList.length,
+    participantList.length,
     hasSearchFilter,
   ]);
 
@@ -304,9 +328,9 @@ export default function ClassTable({ classList }: ClassTableProps) {
       isHeaderSticky
       bottomContent={bottomContent}
       bottomContentPlacement="outside"
-      classNames={{
-        wrapper: "max-h-[382px]",
-      }}
+      //   classNames={{
+      //     wrapper: "max-h-[382px]",
+      //   }}
       selectedKeys={selectedKeys}
       selectionMode="multiple"
       sortDescriptor={sortDescriptor}
@@ -326,9 +350,9 @@ export default function ClassTable({ classList }: ClassTableProps) {
           </TableColumn>
         )}
       </TableHeader>
-      <TableBody emptyContent={"No classes found"} items={sortedItems}>
+      <TableBody emptyContent={"No participants found"} items={sortedItems}>
         {(item) => (
-          <TableRow key={item.id}>
+          <TableRow key={(item.id)}>
             {(columnKey) => (
               <TableCell>{renderCell(item, columnKey)}</TableCell>
             )}
