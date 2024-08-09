@@ -34,8 +34,8 @@ const columns = [
   { name: "CLASS NAME", uid: "name", sortable: true },
   { name: "AGE GROUP", uid: "ageGroup", sortable: true },
   { name: "SCHEDULE", uid: "schedule" },
-  { name: "PARTICIPANT ENROLLED", uid: "participant_enrolled", sortable: true },
-  { name: "PARTICIPANT PAID", uid: "participant_paid", sortable: true },
+  { name: "PARTICIPANT ENROLLED", uid: "participantEnrolled", sortable: true },
+  { name: "PARTICIPANT PAID", uid: "participantPaid", sortable: true },
   { name: "ACTIONS", uid: "actions" },
 ];
 

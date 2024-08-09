@@ -26,29 +26,54 @@ import { PlusIcon } from "@/components/icons/PlusIcon";
 import { VerticalDotsIcon } from "@/components/icons/VerticalDotsIcon";
 import { ChevronDownIcon } from "@/components/icons/ChevronDownIcon";
 import { SearchIcon } from "@/components/icons/SearchIcon";
-import { columns, courses, statusOptions } from "./data";
 import { capitalize } from "@/utils/capitalize";
+import { IRestructuredClassEnrolled } from "./restructureData";
+
+const columns = [
+  { name: "ID", uid: "id", sortable: true },
+  { name: "COURSE NAME", uid: "courseName", sortable: true },
+  { name: "CLASS ID", uid: "classId", sortable: true },
+  { name: "CLASS NAME", uid: "className", sortable: true },
+  { name: "SCHEDULE", uid: "schedule" },
+  { name: "ENROLLED TIME", uid: "enrolledTime" },
+  { name: "BEFORE/AFTER CAMP", uid: "beforeAfterCamp", sortable: true },
+  { name: "PICKUP ARRANGEMENT", uid: "pickUpArrange", sortable: true },
+  { name: "STATUS", uid: "status", sortable: true },
+  { name: "ACTIONS", uid: "actions" },
+];
+
+const statusOptions = [
+  { name: "Paid", uid: "Paid" },
+  { name: "Not Paid", uid: "Not Paid" },
+  { name: "Withdraw", uid: "Withdraw" },
+  { name: "Withdraw", uid: "withdraw" },
+  { name: "Pending", uid: "Pending" },
+];
 
 const statusColorMap: Record<string, ChipProps["color"]> = {
-  active: "success",
-  closed: "danger",
-  paused: "warning",
+  Paid: "success",
+  "Not Paid": "warning",
+  Withdraw: "danger",
+  withdraw: "danger",
+  Pending: "default",
 };
 
 const INITIAL_VISIBLE_COLUMNS = [
-  "course_name",
-  "class_name",
-  "enrolled_time",
-  "course_date",
+  "courseName",
+  "className",
+  "schedule",
+  "enrolledTime",
+  "beforeAfterCamp",
+  "pickUpArrange",
   "status",
-  "beforeOrAfterCamp",
-  "pick_up_arrangement",
   "actions",
 ];
 
-type Course = (typeof courses)[0];
+type CourseTableProps = {
+  courses: IRestructuredClassEnrolled[];
+};
 
-export default function ParticipantCourseTable() {
+export default function ParticipantCourseTable({ courses }: CourseTableProps) {
   const [filterValue, setFilterValue] = React.useState("");
   const [selectedKeys, setSelectedKeys] = React.useState<Selection>(
     new Set([])
@@ -81,10 +106,8 @@ export default function ParticipantCourseTable() {
     if (hasSearchFilter) {
       filteredCourses = filteredCourses.filter(
         (course) =>
-          course.course_name
-            .toLowerCase()
-            .includes(filterValue.toLowerCase()) ||
-          course.class_name.toLowerCase().includes(filterValue.toLowerCase())
+          course.courseName.toLowerCase().includes(filterValue.toLowerCase()) ||
+          course.className.toLowerCase().includes(filterValue.toLowerCase())
       );
     }
     if (
@@ -92,7 +115,7 @@ export default function ParticipantCourseTable() {
       Array.from(statusFilter).length !== statusOptions.length
     ) {
       filteredCourses = filteredCourses.filter((course) =>
-        Array.from(statusFilter).includes(course.status)
+        Array.from(statusFilter).includes(course.status || "Pending")
       );
     }
 
@@ -109,18 +132,24 @@ export default function ParticipantCourseTable() {
   }, [page, filteredItems, rowsPerPage]);
 
   const sortedItems = React.useMemo(() => {
-    return [...items].sort((a: Course, b: Course) => {
-      const first = a[sortDescriptor.column as keyof Course] as number;
-      const second = b[sortDescriptor.column as keyof Course] as number;
-      const cmp = first < second ? -1 : first > second ? 1 : 0;
+    return [...items].sort(
+      (a: IRestructuredClassEnrolled, b: IRestructuredClassEnrolled) => {
+        const first = a[
+          sortDescriptor.column as keyof IRestructuredClassEnrolled
+        ] as number;
+        const second = b[
+          sortDescriptor.column as keyof IRestructuredClassEnrolled
+        ] as number;
+        const cmp = first < second ? -1 : first > second ? 1 : 0;
 
-      return sortDescriptor.direction === "descending" ? -cmp : cmp;
-    });
+        return sortDescriptor.direction === "descending" ? -cmp : cmp;
+      }
+    );
   }, [sortDescriptor, items]);
 
   const renderCell = React.useCallback(
-    (course: Course, columnKey: React.Key) => {
-      const cellValue = course[columnKey as keyof Course];
+    (course: IRestructuredClassEnrolled, columnKey: React.Key) => {
+      const cellValue = course[columnKey as keyof IRestructuredClassEnrolled];
 
       switch (columnKey) {
         case "course-name":
@@ -133,7 +162,7 @@ export default function ParticipantCourseTable() {
           return (
             <Chip
               className="capitalize"
-              color={statusColorMap[course.status]}
+              color={statusColorMap[course.status || "Pending"]}
               size="sm"
               variant="flat"
             >
@@ -274,7 +303,7 @@ export default function ParticipantCourseTable() {
         </div>
         <div className="flex justify-between items-center">
           <span className="text-default-400 text-small">
-            Total {courses.length} courses
+            Total {courses?.length} courses
           </span>
           <label className="flex items-center text-default-400 text-small">
             Rows per page:
@@ -296,7 +325,7 @@ export default function ParticipantCourseTable() {
     visibleColumns,
     onSearchChange,
     onRowsPerPageChange,
-    courses.length,
+    courses?.length,
     hasSearchFilter,
   ]);
 
@@ -371,7 +400,7 @@ export default function ParticipantCourseTable() {
       </TableHeader>
       <TableBody emptyContent={"No courses found"} items={sortedItems}>
         {(item) => (
-          <TableRow key={item.id}>
+          <TableRow key={item.classId}>
             {(columnKey) => (
               <TableCell>{renderCell(item, columnKey)}</TableCell>
             )}

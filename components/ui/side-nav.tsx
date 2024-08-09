@@ -13,7 +13,6 @@ export default function SideNav() {
   const Menus = [
     { title: "Participants", icon: <PiStudent />, path: "/participants" },
     { title: "Courses", icon: <FaBook />, path: "/course-list" },
-    { title: "Profile Test", icon: <LuTestTube2 />, path: "/participants/matt-dickerson" }
   ];
 
   const pathname = usePathname();

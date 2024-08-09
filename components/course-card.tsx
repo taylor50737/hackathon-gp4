@@ -2,65 +2,72 @@
 
 import React from "react";
 import { Card, CardBody, CardFooter, Image } from "@nextui-org/react";
+import Link from "next/link";
 
 export default function CourseCard() {
   const list = [
     {
-      title: "Robotic Saturday",
+      title: "Summer 2024 S.T.E.A.M Camp",
+      img: "https://clas.ucdenver.edu/cpe/sites/default/files/styles/medium/public/page/steamcampatcularge.jpg?itok=sD4EeYlA",
+      participants: "Age 6-9",
+      courseId: "64c0f8bdfd6f9d3c123f45ab",
+    },
+    {
+      title: "Spring 2024 Specific Skill Class",
+      img: "https://media.istockphoto.com/id/466335022/photo/space-hopper-challenge.jpg?s=612x612&w=0&k=20&c=nEqdwhaLdW7FU3l1nDi5jvCIH8pWHj94zKiBrsXuB68=",
+      participants: "Age 10-14",
+      courseId: "64c0fa6afd6f9d3c123f45d5",
+    },
+    {
+      title: "Spring 2024 Kinder Enrichment Class",
+      img: "https://childsuccesscenter.com/wp-content/uploads/2017/12/1.jpg",
+      participants: "Age 4-6",
+      courseId: "64c0fcbafd6f9d3c123f45f3",
+    },
+    {
+      title: "Summer 2024 Saturday Classes",
       img: "https://thumbnails.cbsig.net/CBS_Production_News_VMS/2023/07/01/2240501827541/0701_SatMo_Library_Preston_2094723_1920x1080.jpg",
       participants: "Age 10-14",
+      courseId: "f85e247f897d42cabec9e9dd",
     },
     {
-      title: "Mixed Sport Saturday",
-      img: "https://media.istockphoto.com/id/466335022/photo/space-hopper-challenge.jpg?s=612x612&w=0&k=20&c=nEqdwhaLdW7FU3l1nDi5jvCIH8pWHj94zKiBrsXuB68=",
-      participants: "Age 6-13",
+      title: "Summer 2024 S.T.E.A.M Camp",
+      img: "https://clas.ucdenver.edu/cpe/sites/default/files/styles/medium/public/page/steamcampatcularge.jpg?itok=sD4EeYlA",
+      participants: "Age 6-9",
+      courseId: "af1e0daf12e041d9b460193f",
     },
     {
-      title: "Kinder Enrichment Camp",
+      title: "Summer 2024 Kinder Enrichment Class",
       img: "https://childsuccesscenter.com/wp-content/uploads/2017/12/1.jpg",
-      participants: "Student",
+      participants: "Age 4-6",
+      courseId: "d4da0692a67148748d48c8ec",
     },
-    {
-        title: "Robotic Saturday",
-        img: "https://thumbnails.cbsig.net/CBS_Production_News_VMS/2023/07/01/2240501827541/0701_SatMo_Library_Preston_2094723_1920x1080.jpg",
-        participants: "Age 10-14",
-      },
-      {
-        title: "Mixed Sport Saturday",
-        img: "https://media.istockphoto.com/id/466335022/photo/space-hopper-challenge.jpg?s=612x612&w=0&k=20&c=nEqdwhaLdW7FU3l1nDi5jvCIH8pWHj94zKiBrsXuB68=",
-        participants: "Age 6-13",
-      },
-      {
-        title: "Kinder Enrichment Camp",
-        img: "https://childsuccesscenter.com/wp-content/uploads/2017/12/1.jpg",
-        participants: "Student",
-      },
   ];
 
   return (
-    <div className="gap-2 grid grid-cols-1 sm:grid-cols-6 pt-2">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 pt-2">
       {list.map((item, index) => (
-        <Card
-          shadow="sm"
-          key={index}
-          isPressable
-          onPress={() => console.log("item pressed")}
-        >
-          <CardBody className="overflow-visible p-0">
-            <Image
-              shadow="sm"
-              radius="lg"
-              width="100%"
-              alt={item.title}
-              className="w-full object-cover h-[140px]"
-              src={item.img}
-            />
-          </CardBody>
-          <CardFooter className="flex flex-col text-small items-start">
-            <b>{item.title}</b>
-            <p className="text-default-500">{item.participants}</p>
-          </CardFooter>
-        </Card>
+        <Link key={index} href={`/course-list/${item.courseId}`}>
+          <Card
+            shadow="sm"
+            isPressable
+            className="w-full flex flex-col justify-between"
+          >
+            <CardBody className="overflow-hidden p-0">
+              <Image
+                shadow="sm"
+                radius="lg"
+                alt={item.title}
+                className="w-full h-full object-fit: cover sm:h-[190px]"
+                src={item.img}
+              />
+            </CardBody>
+            <CardFooter className="flex flex-col text-small items-start truncate">
+              <b className="truncate">{item.title}</b>
+              <p className="text-default-500">{item.participants}</p>
+            </CardFooter>
+          </Card>
+        </Link>
       ))}
     </div>
   );
