@@ -265,13 +265,13 @@ export default function ParticipantCourseTable({ courses }: CourseTableProps) {
                 ))}
               </DropdownMenu>
             </Dropdown>
-            <Button
+            {/* <Button
               className="bg-light-gray text-strong-purple"
               color="primary"
               endContent={<PlusIcon />}
             >
               Add New
-            </Button>
+            </Button> */}
             <Dropdown>
               <DropdownTrigger className="hidden sm:flex">
                 <Button

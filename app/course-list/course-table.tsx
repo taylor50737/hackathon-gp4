@@ -220,13 +220,13 @@ export default function CourseTable({ courseList }: CourseTableProps) {
                 ))}
               </DropdownMenu>
             </Dropdown>
-            <Button
+            {/* <Button
               className="bg-light-gray text-strong-purple"
               color="primary"
               endContent={<PlusIcon />}
             >
               Add New
-            </Button>
+            </Button> */}
           </div>
         </div>
         <div className="flex justify-between items-center">

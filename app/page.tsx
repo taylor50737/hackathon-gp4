@@ -69,7 +69,7 @@ export default function HomePage() {
                 <Image
                   alt="Card background"
                   className="rounded-none w-full object-cover"
-                  src="https://www.discoverycares.com/uploads/1/1/6/8/11685285/header_images/1398251862.jpg"
+                  src="https://childsuccesscenter.com/wp-content/uploads/2021/03/k-camp-web-header.jpg"
                 />
               </div>
               <div className="px-4">

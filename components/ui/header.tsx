@@ -8,6 +8,8 @@ import { BsBell } from "react-icons/bs";
 import { GoGear } from "react-icons/go";
 import SearchInput from "./search-input";
 import { Suspense } from "react";
+import Image from "next/image";
+import logoImg from "public/logo.png";
 
 export default function Header() {
   const HeaderMenus = [
@@ -22,7 +24,9 @@ export default function Header() {
     <div>
       <nav className="flex flex-row items-center justify-between mx-auto px-5 pt-3">
         <Link href="/" className="font-bond text-3xl">
-          CICS
+          <div className="md:shrink-0">
+            <Image alt="CICS Logo" src={logoImg} className="h-16 w-full md:w-full" />
+          </div>
         </Link>
 
         <div className="focus-within:bg-transparent flex px-3 rounded-full h-10 lg:w-2/4 mx-auto">
