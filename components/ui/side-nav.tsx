@@ -18,7 +18,7 @@ export default function SideNav() {
   const pathname = usePathname();
 
   return (
-    <div className="bg-light-violet h-screen pt-12 relative flex flex-col items-center">
+    <div className="bg-light-violet h-screen pt-12 relative hidden md:flex flex-col items-center">
       <Link
         href="/"
         className={`rounded-2xl hover:bg-light-pink cursor-pointer p-4 ${
