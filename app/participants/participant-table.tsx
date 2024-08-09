@@ -15,10 +15,8 @@ import {
   Dropdown,
   DropdownMenu,
   DropdownItem,
-  Chip,
   Pagination,
   Selection,
-  ChipProps,
   SortDescriptor,
 } from "@nextui-org/react";
 
@@ -26,23 +24,58 @@ import { PlusIcon } from "@/components/icons/PlusIcon";
 import { VerticalDotsIcon } from "@/components/icons/VerticalDotsIcon";
 import { ChevronDownIcon } from "@/components/icons/ChevronDownIcon";
 import { SearchIcon } from "@/components/icons/SearchIcon";
-import { columns, participants } from "./data";
 import { capitalize } from "@/utils/capitalize";
+import { IRestructuredStudent } from "./restructureData";
+
+const columns = [
+  { name: "ID", uid: "id", sortable: true },
+  { name: "FIRST NAME", uid: "firstName", sortable: true },
+  { name: "LAST NAME", uid: "lastName", sortable: true },
+  { name: "GENDER", uid: "gender", sortable: true },
+  { name: "DATE OF BIRTH", uid: "dob" },
+  { name: "PHONE", uid: "phone", sortable: true },
+  { name: "EMAIL", uid: "email" },
+  { name: "ADDRESS", uid: "address" },
+  { name: "SPECIAL NEEDS", uid: "specialNeeds", sortable: true },
+  { name: "GUARDIAN NAME", uid: "guardianFullName", sortable: true },
+  {
+    name: "GUARDIAN RELATIONSHIP",
+    uid: "guardianRelationship",
+    sortable: true,
+  },
+  { name: "EMERGENCY FULL NAME", uid: "emergencyFullName", sortable: true },
+  { name: "EMERGENCY PHONE", uid: "emergencyPhone", sortable: true },
+  {
+    name: "EMERGENCY RELATIONSHIP",
+    uid: "emergencyRelationship",
+    sortable: true,
+  },
+  { name: "CREDIT", uid: "credits", sortable: true },
+  { name: "ACTIONS", uid: "actions" },
+];
 
 const INITIAL_VISIBLE_COLUMNS = [
-  "first_name",
-  "last_name",
+  "firstName",
+  "lastName",
+  "gender",
   "dob",
-  "language",
-  "parent_name1",
-  "relationship1",
   "phone",
+  "email",
+  "address",
+  "specialNeeds",
+  "guardianFullName",
+  "emergencyFullName",
+  "credit",
   "actions",
 ];
 
-type Participant = (typeof participants)[0];
+type ParticipantTableProps = {
+  participantList: IRestructuredStudent[];
+};
 
-export default function ParticipantTable() {
+export default function ParticipantTable({
+  participantList,
+}: ParticipantTableProps) {
   const [filterValue, setFilterValue] = React.useState("");
   const [selectedKeys, setSelectedKeys] = React.useState<Selection>(
     new Set([])
@@ -69,15 +102,15 @@ export default function ParticipantTable() {
   }, [visibleColumns]);
 
   const filteredItems = React.useMemo(() => {
-    let filteredParticipants = [...participants];
+    let filteredParticipants = [...participantList];
 
     if (hasSearchFilter) {
       const lowerCaseFilterValue = filterValue.toLowerCase();
       filteredParticipants = filteredParticipants.filter((participant) => {
         const fullName =
-          `${participant.first_name} ${participant.last_name}`.toLowerCase();
+          `${participant.firstName} ${participant.lastName}`.toLowerCase();
         const reversedFullName =
-          `${participant.last_name} ${participant.first_name}`.toLowerCase();
+          `${participant.lastName} ${participant.firstName}`.toLowerCase();
 
         return (
           fullName.includes(lowerCaseFilterValue) ||
@@ -87,7 +120,7 @@ export default function ParticipantTable() {
     }
 
     return filteredParticipants;
-  }, [participants, filterValue]);
+  }, [participantList, filterValue]);
 
   const pages = Math.ceil(filteredItems.length / rowsPerPage);
 
@@ -99,18 +132,24 @@ export default function ParticipantTable() {
   }, [page, filteredItems, rowsPerPage]);
 
   const sortedItems = React.useMemo(() => {
-    return [...items].sort((a: Participant, b: Participant) => {
-      const first = a[sortDescriptor.column as keyof Participant] as number;
-      const second = b[sortDescriptor.column as keyof Participant] as number;
-      const cmp = first < second ? -1 : first > second ? 1 : 0;
+    return [...items].sort(
+      (a: IRestructuredStudent, b: IRestructuredStudent) => {
+        const first = a[
+          sortDescriptor.column as keyof IRestructuredStudent
+        ] as number;
+        const second = b[
+          sortDescriptor.column as keyof IRestructuredStudent
+        ] as number;
+        const cmp = first < second ? -1 : first > second ? 1 : 0;
 
-      return sortDescriptor.direction === "descending" ? -cmp : cmp;
-    });
+        return sortDescriptor.direction === "descending" ? -cmp : cmp;
+      }
+    );
   }, [sortDescriptor, items]);
 
   const renderCell = React.useCallback(
-    (participant: Participant, columnKey: React.Key) => {
-      const cellValue = participant[columnKey as keyof Participant];
+    (student: IRestructuredStudent, columnKey: React.Key) => {
+      const cellValue = student[columnKey as keyof IRestructuredStudent];
 
       switch (columnKey) {
         case "course-name":
@@ -129,8 +168,8 @@ export default function ParticipantTable() {
                   </Button>
                 </DropdownTrigger>
                 <DropdownMenu>
-                  <DropdownItem href="/participants/matt-dickerson">
-                    View
+                  <DropdownItem href={`/participants/${student.id}`}>
+                    View Profile
                   </DropdownItem>
                   <DropdownItem>Edit</DropdownItem>
                   <DropdownItem>Delete</DropdownItem>
@@ -229,7 +268,7 @@ export default function ParticipantTable() {
         </div>
         <div className="flex justify-between items-center">
           <span className="text-default-400 text-small">
-            Total {participants.length} participants
+            Total {participantList.length} participants
           </span>
           <label className="flex items-center text-default-400 text-small">
             Rows per page:
@@ -254,7 +293,7 @@ export default function ParticipantTable() {
     visibleColumns,
     onSearchChange,
     onRowsPerPageChange,
-    participants.length,
+    participantList.length,
     hasSearchFilter,
   ]);
 
