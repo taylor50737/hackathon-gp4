@@ -45,22 +45,25 @@ export default function CourseCard() {
   ];
 
   return (
-    <div className="gap-2 grid grid-cols-1 sm:grid-cols-6 pt-2">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 pt-2">
       {list.map((item, index) => (
         <Link key={index} href={`/course-list/${item.courseId}`}>
-          <Card shadow="sm" isPressable>
-            <CardBody className="overflow-visible p-0">
+          <Card
+            shadow="sm"
+            isPressable
+            className="w-full flex flex-col justify-between"
+          >
+            <CardBody className="overflow-hidden p-0">
               <Image
                 shadow="sm"
                 radius="lg"
-                width="100%"
                 alt={item.title}
-                className="w-full object-cover h-[140px]"
+                className="w-full h-[140px] object-cover"
                 src={item.img}
               />
             </CardBody>
-            <CardFooter className="flex flex-col text-small items-start">
-              <b>{item.title}</b>
+            <CardFooter className="flex flex-col text-small items-start truncate">
+              <b className="truncate">{item.title}</b>
               <p className="text-default-500">{item.participants}</p>
             </CardFooter>
           </Card>
