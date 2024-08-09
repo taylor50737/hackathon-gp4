@@ -1,3 +1,5 @@
+// no longer needed
+
 import React from "react";
 
 const columns = [
