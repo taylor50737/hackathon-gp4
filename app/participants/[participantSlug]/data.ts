@@ -1,29 +1,4 @@
 import React from "react";
-const columns = [
-  { name: "ID", uid: "id", sortable: true },
-  { name: "COURSE NAME", uid: "course_name", sortable: true },
-  { name: "CLASS NAME", uid: "class_name", sortable: true },
-  { name: "ENROLLED TIME", uid: "enrolled_time" },
-  { name: "COURSE DATE", uid: "course_date" },
-  { name: "STATUS", uid: "status", sortable: true },
-  { name: "BEFORE/AFTER CAMP", uid: "beforeOrAfterCamp", sortable: true },
-  { name: "PICKUP ARRANGEMENT", uid: "pick_up_arrangement", sortable: true },
-  {
-    name: "DISCOUNT CODE APPLIED",
-    uid: "isDiscountCodeApplied",
-    sortable: true,
-  },
-  { name: "CREDIT APPLIED", uid: "isCreditApplied", sortable: true },
-  { name: "FEE AMOUNT", uid: "feeAmount", sortable: true },
-  { name: "PAYMENT STATUS", uid: "payment_status", sortable: true },
-  { name: "ACTIONS", uid: "actions" },
-];
-
-const statusOptions = [
-  { name: "Active", uid: "active" },
-  { name: "Closed", uid: "closed" },
-  { name: "Paused", uid: "paused" },
-];
 
 const PaymentStatusOptions = [
   { name: "Paid", uid: "paid" },
@@ -145,4 +120,4 @@ const courses = [
   },
 ];
 
-export { columns, courses, statusOptions };
+export { courses };
