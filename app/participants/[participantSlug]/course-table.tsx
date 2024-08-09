@@ -30,7 +30,6 @@ import { capitalize } from "@/utils/capitalize";
 import { IRestructuredClassEnrolled } from "./restructureData";
 
 const columns = [
-  { name: "ID", uid: "id", sortable: true },
   { name: "COURSE NAME", uid: "courseName", sortable: true },
   { name: "CLASS ID", uid: "classId", sortable: true },
   { name: "CLASS NAME", uid: "className", sortable: true },
@@ -39,7 +38,6 @@ const columns = [
   { name: "BEFORE/AFTER CAMP", uid: "beforeAfterCamp", sortable: true },
   { name: "PICKUP ARRANGEMENT", uid: "pickUpArrange", sortable: true },
   { name: "STATUS", uid: "status", sortable: true },
-  { name: "ACTIONS", uid: "actions" },
 ];
 
 const statusOptions = [

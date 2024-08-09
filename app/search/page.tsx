@@ -44,7 +44,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
     <div className="flex flex-1 py-4 h-screen sm:h-fit flex-col space-y-2 px-4 gap-4">
       {courses.length > 0 && (
         <div>
-          <h1 className="text-2xl py-2">Relevant courses:</h1>
+          <h1 className="text-2xl py-2">Relevant courses result:</h1>
           <div className="flex flex-col gap-4">
             {courses.map((course, index) => (
               <Link key={index} href={`/course-list/${course.id}`}>
@@ -63,7 +63,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
 
       {classes.length > 0 && (
         <div>
-          <h1 className="text-2xl py-2">Relevant classes:</h1>
+          <h1 className="text-2xl py-2">Relevant classes result:</h1>
           <div className="flex flex-col gap-4">
             {classes.map((cls, index) => (
               <Link key={index} href={`/course-list/${cls.courseId}/${cls.id}`}>
@@ -85,7 +85,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
 
       {students.length > 0 && (
         <div>
-          <h1 className="text-2xl py-2">Relevant students:</h1>
+          <h1 className="text-2xl py-2">Relevant students result:</h1>
           <div className="flex flex-col gap-4">
             {students.map((student, index) => (
               <Link key={index} href={`/participants/${student.id}`}>
