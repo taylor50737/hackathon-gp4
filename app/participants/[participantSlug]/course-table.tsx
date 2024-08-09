@@ -43,14 +43,17 @@ const columns = [
 ];
 
 const statusOptions = [
-  { name: "Paid", uid: "paid" },
+  { name: "Paid", uid: "Paid" },
+  { name: "Not Paid", uid: "Not Paid" },
+  { name: "Withdraw", uid: "Withdraw" },
   { name: "Withdraw", uid: "withdraw" },
 ];
 
 const statusColorMap: Record<string, ChipProps["color"]> = {
-  paid: "success",
-  closed: "danger",
-  withdraw: "warning",
+  Paid: "success",
+  "Not Paid": "warning",
+  Withdraw: "danger",
+  withdraw: "danger",
 };
 
 const INITIAL_VISIBLE_COLUMNS = [
