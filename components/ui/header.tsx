@@ -97,39 +97,44 @@ export default function Header() {
       </nav>
 
       {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div id="mobile-menu" className="md:hidden">
-          <ul className="flex flex-col px-5 py-4 gap-2 bg-light-violet">
-            <li>
+      <div
+        id="mobile-menu"
+        className={`md:hidden transform transition-all duration-700 ease-in-out ${
+          isMobileMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+        } overflow-hidden`}
+      >
+        <ul className="flex flex-col px-5 py-4 gap-2 bg-light-violet">
+          <li>
+            <Suspense>
               <SearchInput />
-            </li>
-            <li>
-              <Link
-                href="/"
-                className="block py-2 pr-4 pl-3 text-lg border-b rounded border-gray-100  hover:bg-light-gray"
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/participants"
-                className="block py-2 pr-4 pl-3 text-lg border-b rounded border-gray-100  hover:bg-light-gray"
-              >
-                Participants
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/course-list"
-                className="block py-2 pr-4 pl-3 text-lg border-b rounded border-gray-100  hover:bg-light-gray"
-              >
-                Courses
-              </Link>
-            </li>
-          </ul>
-        </div>
-      )}
+            </Suspense>
+          </li>
+          <li>
+            <Link
+              href="/"
+              className="block py-2 pr-4 pl-3 text-lg border-b rounded border-gray-100  hover:bg-light-gray"
+            >
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/participants"
+              className="block py-2 pr-4 pl-3 text-lg border-b rounded border-gray-100  hover:bg-light-gray"
+            >
+              Participants
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/course-list"
+              className="block py-2 pr-4 pl-3 text-lg border-b rounded border-gray-100  hover:bg-light-gray"
+            >
+              Courses
+            </Link>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }
