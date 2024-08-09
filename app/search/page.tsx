@@ -34,7 +34,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
     redirect("/");
   }
 
-  const results = await fetchBySearchTerm(term);
+  const results = (await fetchBySearchTerm(term)) || [];
 
   const courses = results.filter(isRestructuredCourse);
   const classes = results.filter(isRestructuredClass);
