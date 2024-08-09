@@ -57,7 +57,6 @@ const INITIAL_VISIBLE_COLUMNS = [
   "specialNeeds",
   "guardianFullName",
   "emergencyFullName",
-  "credits",
   "actions",
 ];
 
@@ -134,8 +133,8 @@ export default function ParticipantTable({
   }, [sortDescriptor, items]);
 
   const renderCell = React.useCallback(
-    (course: IRestructuredStudent, columnKey: React.Key) => {
-      const cellValue = course[columnKey as keyof IRestructuredStudent];
+    (student: IRestructuredStudent, columnKey: React.Key) => {
+      const cellValue = student[columnKey as keyof IRestructuredStudent];
 
       switch (columnKey) {
         case "course-name":
@@ -154,7 +153,7 @@ export default function ParticipantTable({
                   </Button>
                 </DropdownTrigger>
                 <DropdownMenu>
-                  <DropdownItem href={`/course-list/${course.id}`}>View</DropdownItem>
+                  <DropdownItem href={`/participants/${student.id}`}>View Profile</DropdownItem>
                   <DropdownItem>Edit</DropdownItem>
                   <DropdownItem>Delete</DropdownItem>
                 </DropdownMenu>
