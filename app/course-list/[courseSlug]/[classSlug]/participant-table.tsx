@@ -38,10 +38,18 @@ const columns = [
   { name: "ADDRESS", uid: "address" },
   { name: "SPECIAL NEEDS", uid: "specialNeeds", sortable: true },
   { name: "GUARDIAN NAME", uid: "guardianFullName", sortable: true },
-  { name: "GUARDIAN RELATIONSHIP", uid: "guardianRelationship", sortable: true },
+  {
+    name: "GUARDIAN RELATIONSHIP",
+    uid: "guardianRelationship",
+    sortable: true,
+  },
   { name: "EMERGENCY FULL NAME", uid: "emergencyFullName", sortable: true },
   { name: "EMERGENCY PHONE", uid: "emergencyPhone", sortable: true },
-  { name: "EMERGENCY RELATIONSHIP", uid: "emergencyRelationship", sortable: true },
+  {
+    name: "EMERGENCY RELATIONSHIP",
+    uid: "emergencyRelationship",
+    sortable: true,
+  },
   { name: "CREDIT", uid: "credits", sortable: true },
   { name: "ACTIONS", uid: "actions" },
 ];
@@ -57,6 +65,7 @@ const INITIAL_VISIBLE_COLUMNS = [
   "specialNeeds",
   "guardianFullName",
   "emergencyFullName",
+  "credit",
   "actions",
 ];
 
@@ -123,13 +132,19 @@ export default function ParticipantTable({
   }, [page, filteredItems, rowsPerPage]);
 
   const sortedItems = React.useMemo(() => {
-    return [...items].sort((a: IRestructuredStudent, b: IRestructuredStudent) => {
-      const first = a[sortDescriptor.column as keyof IRestructuredStudent] as number;
-      const second = b[sortDescriptor.column as keyof IRestructuredStudent] as number;
-      const cmp = first < second ? -1 : first > second ? 1 : 0;
+    return [...items].sort(
+      (a: IRestructuredStudent, b: IRestructuredStudent) => {
+        const first = a[
+          sortDescriptor.column as keyof IRestructuredStudent
+        ] as number;
+        const second = b[
+          sortDescriptor.column as keyof IRestructuredStudent
+        ] as number;
+        const cmp = first < second ? -1 : first > second ? 1 : 0;
 
-      return sortDescriptor.direction === "descending" ? -cmp : cmp;
-    });
+        return sortDescriptor.direction === "descending" ? -cmp : cmp;
+      }
+    );
   }, [sortDescriptor, items]);
 
   const renderCell = React.useCallback(
@@ -153,7 +168,9 @@ export default function ParticipantTable({
                   </Button>
                 </DropdownTrigger>
                 <DropdownMenu>
-                  <DropdownItem href={`/participants/${student.id}`}>View Profile</DropdownItem>
+                  <DropdownItem href={`/participants/${student.id}`}>
+                    View Profile
+                  </DropdownItem>
                   <DropdownItem>Edit</DropdownItem>
                   <DropdownItem>Delete</DropdownItem>
                 </DropdownMenu>
@@ -166,7 +183,7 @@ export default function ParticipantTable({
     },
     []
   );
-  
+
   const onNextPage = React.useCallback(() => {
     if (page < pages) {
       setPage(page + 1);
@@ -351,7 +368,7 @@ export default function ParticipantTable({
       </TableHeader>
       <TableBody emptyContent={"No participants found"} items={sortedItems}>
         {(item) => (
-          <TableRow key={(item.id)}>
+          <TableRow key={item.id}>
             {(columnKey) => (
               <TableCell>{renderCell(item, columnKey)}</TableCell>
             )}
