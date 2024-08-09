@@ -148,7 +148,7 @@ export default function HomePage() {
         ))}
       </div>
 
-      <div className="grid grid-cols-12 grid-rows-4 gap-2 py-6">
+      <div className="hidden sm:grid grid-cols-12 grid-rows-4 gap-2 py-6">
         <Card className="col-span-6 row-span-2 h-[610px]">
           <Image
             removeWrapper
@@ -271,7 +271,7 @@ export default function HomePage() {
         </Card>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <Card className="py-4 bg-light-violet" isPressable>
+        <Card className="py-4 bg-light-violet">
           <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
             <p className="text-tiny font-bold">Community Update</p>
           </CardHeader>
@@ -280,21 +280,24 @@ export default function HomePage() {
               <Image
                 alt="Card background"
                 className="rounded-none w-full object-cover h-full"
-                src="https://www.cookingclass-singapore.com/wp-content/uploads/Parent-Child-Class.jpg"
+                src="https://joburg.co.za/wp-content/uploads/2017/07/Feature-Image-1000-%C3%97-420-px-37.png"
               />
             </div>
             <div className="px-4">
-              <p className="pt-2">Cooking class 101</p>
+              <p className="pt-2">Junior Chef Discovery Class</p>
               <small className="text-default-500">Age 6-9</small>
-              <small className="text-default-500 block">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor
+              <small className="text-default-700 block">
+                Our junior chefs got creative with fresh fruits today! They
+                learned how to safely use kitchen tools to cut and prepare a
+                colorful fruit salad. The kids explored different flavor
+                combinations and even made their own dressing using honey and
+                lemon. It was a fruity fiesta!
               </small>
             </div>
           </CardBody>
         </Card>
 
-        <Card className="py-4 bg-light-violet" isPressable>
+        <Card className="py-4 bg-light-violet">
           <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
             <p className="text-tiny font-bold">Community Update</p>
           </CardHeader>
@@ -303,15 +306,18 @@ export default function HomePage() {
               <Image
                 alt="Card background"
                 className="rounded-none w-full object-cover h-full"
-                src="https://www.ourkids.net/images/pp/sidney-ledson-institute-2024.jpg"
+                src="https://moonpreneur.com/blog/wp-content/uploads/2023/02/html-and-css-for-kids.webp"
               />
             </div>
             <div className="px-4">
-              <p className="pt-2">Summer Course 101</p>
-              <small className="text-default-500">Age 6-9</small>
-              <small className="text-default-500 block">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor
+              <p className="pt-2">JavaScript & Python Class</p>
+              <small className="text-default-500">Age 10-14</small>
+              <small className="text-default-700 block">
+                Our JavaScript Adventure Camp is in full swing! This week, the
+                kids are diving into the basics of web development, learning how
+                to create interactive web pages using JavaScript. They’ve
+                started building their first personal websites, which include
+                fun games and quizzes they’ve coded themselves.
               </small>
             </div>
           </CardBody>
