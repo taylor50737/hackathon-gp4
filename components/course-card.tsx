@@ -20,7 +20,7 @@ export default function CourseCard() {
     },
     {
       title: "Spring 2024 Kinder Enrichment Class",
-      img: "https://childsuccesscenter.com/wp-content/uploads/2017/12/1.jpg",
+      img: "https://skole.vamtam.com/wp-content/uploads/2020/02/h-20.jpg",
       participants: "Age 4-6",
       courseId: "64c0fcbafd6f9d3c123f45f3",
     },
@@ -32,13 +32,13 @@ export default function CourseCard() {
     },
     {
       title: "Summer 2024 S.T.E.A.M Camp",
-      img: "https://clas.ucdenver.edu/cpe/sites/default/files/styles/medium/public/page/steamcampatcularge.jpg?itok=sD4EeYlA",
+      img: "https://www.ourkids.net/images/school-header/steam-project-camp-making-education-fun.jpg",
       participants: "Age 6-9",
       courseId: "af1e0daf12e041d9b460193f",
     },
     {
       title: "Summer 2024 Kinder Enrichment Class",
-      img: "https://childsuccesscenter.com/wp-content/uploads/2017/12/1.jpg",
+      img: "https://content.active.com/Assets/Active.com+Content+Site+Digital+Assets/Kids/Articles/Summer+Camp+for+Preschoolers/Preschool+Campers-carousel.jpg",
       participants: "Age 4-6",
       courseId: "d4da0692a67148748d48c8ec",
     },
