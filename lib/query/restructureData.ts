@@ -14,6 +14,7 @@ export interface IRestructuredCourse {
 export interface IRestructuredClass {
   id: string;
   courseId: string;
+  courseName: string;
   className: string;
   ageGroup: string;
   schedule: string;
@@ -58,6 +59,7 @@ export const restructureClassData = (
   return classes.map((classItem) => ({
     id: classItem._id.toString(),
     courseId: classItem.course.courseId.toString(),
+    courseName: classItem.course.name,
     className: classItem.name,
     ageGroup: classItem.ageGroup || "",
     schedule: classItem.schedule,
