@@ -7,6 +7,7 @@ import { IoPersonCircleOutline } from "react-icons/io5";
 import { BsBell } from "react-icons/bs";
 import { GoGear } from "react-icons/go";
 import SearchInput from "./search-input";
+import { Suspense } from "react";
 
 export default function Header() {
   const HeaderMenus = [
@@ -25,7 +26,9 @@ export default function Header() {
         </Link>
 
         <div className="focus-within:bg-transparent flex px-3 rounded-full h-10 lg:w-2/4 mx-auto">
-          <SearchInput />
+          <Suspense>
+            <SearchInput />
+          </Suspense>
         </div>
 
         <ul className="gap-1 text-2xl flex">
