@@ -24,7 +24,7 @@ export default function RootLayout({
         <div className="flex h-screen">
           <SideNav />
           <div className="w-full overflow-x-auto bg-light-violet pt-2">
-            <div className="flex flex-col min-h-screen">
+            <div className="flex flex-col bg-white rounded-3xl justify-between min-h-screen">
               <Header />
               <main className="flex-grow">
                 <div className="w-full md:max-2-6xl mx-auto">{children}</div>
