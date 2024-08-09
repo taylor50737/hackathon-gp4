@@ -24,12 +24,14 @@ export default function RootLayout({
         <div className="flex h-screen">
           <SideNav />
           <div className="w-full overflow-x-auto bg-light-violet pt-2">
-            <div className="overflow-auto bg-white rounded-3xl justify-between flex flex-col">
+            <div className="flex flex-col min-h-screen">
               <Header />
-              <main className="w-full flex justify-center mx-auto mb-auto overflow-auto h-[calc(100vh - 120px)] overflow-y-auto relative">
-                <div className="w-full md:max-2-6xl">{children}</div>
+              <main className="flex-grow">
+                <div className="w-full md:max-2-6xl mx-auto">{children}</div>
               </main>
-              <Footer />
+              <div className="mt-auto">
+                <Footer />
+              </div>
             </div>
           </div>
         </div>
