@@ -85,7 +85,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
 
       {students.length > 0 && (
         <div>
-          <h1 className="text-2xl py-2">Relevant students result:</h1>
+          <h1 className="text-2xl py-2">Relevant participants result:</h1>
           <div className="flex flex-col gap-4">
             {students.map((student, index) => (
               <Link key={index} href={`/participants/${student.id}`}>
