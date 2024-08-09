@@ -9,7 +9,7 @@ export interface IRestructuredClassEnrolled {
   beforeAfterCamp?: string;
   pickUpArrange?: string;
   fee: number;
-  status: string;
+  status?: string;
 }
 
 export const restructureEnrolledClassData = (
@@ -24,6 +24,6 @@ export const restructureEnrolledClassData = (
     beforeAfterCamp: item.beforeAfterCamp,
     pickUpArrange: item.pickUpArrange,
     fee: item.fee,
-    status: item.status,
+    status: item.status || "Pending",
   }));
 };

@@ -20,7 +20,7 @@ export interface IClassEnrolled {
   beforeAfterCamp?: string;
   pickUpArrange?: string;
   fee: number;
-  status: string;
+  status?: string;
   [key: string]: any;
 }
 
