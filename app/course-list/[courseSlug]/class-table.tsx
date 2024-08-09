@@ -43,8 +43,8 @@ const INITIAL_VISIBLE_COLUMNS = [
   "name",
   "ageGroup",
   "schedule",
-  "participant_enrolled",
-  "participant_paid",
+  "participantEnrolled",
+  "participantPaid",
   "actions",
 ];
 

@@ -1,69 +1,88 @@
 import { Card, CardHeader, CardBody, Image, Button } from "@nextui-org/react";
+import { redirect } from "next/dist/server/api-utils";
+import Link from "next/link";
 
 export default function HomePage() {
-  const DUMMY_COURSE = [
+  const DUMMY_CLASS = [
     {
-      course_name: "Course 201",
-      age_group: "9-12",
-      img: "https://www.firstdiscoverers.co.uk/wp-content/uploads/2017/02/19783570_m-copy-copy.jpg",
+      id: "64c0fa7afd6f9d3c123f45d6",
+      class_name: "Anime Creators",
+      course_id: "64c0fa6afd6f9d3c123f45d5",
+      course_name: "Spring 2024 Specific Skills Classes",
+      age_group: "10-14",
+      img: "https://www.centauriarts.com/wp-content/uploads/2021/08/digital-art-classes.jpg",
     },
     {
-      course_name: "Course 202",
-      age_group: "4-8",
-      img: "https://images.squarespace-cdn.com/content/v1/5b86f64fee175917450351b3/1537988986770-33HCDGRG92J69LN4FCVS/1153b657-2615-494c-888d-922bc671346c.JPG",
+      id: "64c0fcbafd6f9d3c123f45f4",
+      class_name: "Watercolour Wonderland",
+      course_id: "64c0fcbafd6f9d3c123f45f3",
+      course_name: "Spring 2024 Kinder Enrichment Class",
+      age_group: "4-6",
+      img: "https://childslife.ca/wp-content/uploads/2022/08/YrCl7WI0-2.jpeg",
     },
     {
-      course_name: "Course 203",
-      age_group: "4-8",
-      img: "https://tlc-northsydneyliving.s3.ap-southeast-2.amazonaws.com/wp-content/uploads/2019/05/Mosman-Playgroup-e1519123480749.jpg",
+      id: "64c0fcbafd6f9d3c123f45f6",
+      class_name: "Chef-in-Training",
+      course_id: "64c0fcbafd6f9d3c123f45f3",
+      course_name: "Spring 2024 Kinder Enrichment Class",
+      age_group: "4-6",
+      img: "https://rooks-to-cooks.myshopify.com/cdn/shop/files/70I4850_2d9867ea-5375-4e4a-8ff2-aa5595bf2f87.jpg?v=1689339652",
     },
   ];
 
   return (
     <div className="flex flex-1 py-4 h-screen sm:h-fit flex-col space-y-2 px-4">
-      <div className="gap-6 grid grid-cols-3 p-6">
-        <Card className="py-4 bg-light-violet" isPressable>
-          <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-            <p className="text-tiny font-bold">Today&apos;s Course</p>
-            <small className="text-default-500">Summer 2024</small>
-          </CardHeader>
-          <CardBody className="overflow-visible py-2 px-0">
-            <div className="overflow-hidden h-32">
-              <Image
-                alt="Card background"
-                className="rounded-none w-full"
-                src="https://www.cookingclass-singapore.com/wp-content/uploads/Parent-Child-Class.jpg"
-              />
-            </div>
-            <div className="px-4">
-              <p className="pt-2">Cooking class 101</p>
-              <small className="text-default-500">Age 6-9</small>
-              <small className="text-default-500 block">Occupying pantry</small>
-            </div>
-          </CardBody>
-        </Card>
-        <Card className="py-4 bg-light-violet" isPressable>
-          <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-            <p className="text-tiny font-bold">Today&apos;s Course</p>
-            <small className="text-default-500">Summer 2024</small>
-          </CardHeader>
-          <CardBody className="overflow-visible py-2 px-0">
-            <div className="overflow-hidden h-32">
-              <Image
-                alt="Card background"
-                className="rounded-none w-full"
-                src="https://www.ourkids.net/images/pp/sidney-ledson-institute-2024.jpg"
-              />
-            </div>
-            <div className="px-4">
-              <p className="pt-2">Summer Course 101</p>
-              <small className="text-default-500">Age 6-9</small>
-              <small className="text-default-500 block">
-                Occupying classroom 203
-              </small>
-            </div>
-          </CardBody>
-        </Card>
+      <div className="gap-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-6">
+        <Link href="/course-list/f85e247f897d42cabec9e9dd">
+          <Card className="py-4 bg-light-violet" isPressable>
+            <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+              <p className="text-tiny font-bold">Today&apos;s Course</p>
+              <small className="text-default-500">Summer 2024</small>
+            </CardHeader>
+            <CardBody className="overflow-visible py-2 px-0">
+              <div className="overflow-hidden h-32">
+                <Image
+                  alt="Card background"
+                  className="rounded-none w-full object-cover"
+                  src="https://d2wvwvig0d1mx7.cloudfront.net/data/org/24895/media/img/cache/1600x0/2897220_1600x0.jpg"
+                />
+              </div>
+              <div className="px-4">
+                <p className="pt-2">Summer 2024 Saturday Camp</p>
+                <small className="text-default-500">Age 6-9</small>
+                <small className="text-default-500 block">
+                  Occupying classroom 201
+                </small>
+              </div>
+            </CardBody>
+          </Card>
+        </Link>
+
+        <Link href="/course-list/bb64db2774f74e9bb8a9756d">
+          <Card className="py-4 bg-light-violet" isPressable>
+            <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+              <p className="text-tiny font-bold">Today&apos;s Course</p>
+              <small className="text-default-500">Summer 2024</small>
+            </CardHeader>
+            <CardBody className="overflow-visible py-2 px-0">
+              <div className="overflow-hidden h-32 object-cover">
+                <Image
+                  alt="Card background"
+                  className="rounded-none w-full object-cover"
+                  src="https://www.discoverycares.com/uploads/1/1/6/8/11685285/header_images/1398251862.jpg"
+                />
+              </div>
+              <div className="px-4">
+                <p className="pt-2">Kinder Enrichment Camp</p>
+                <small className="text-default-500">Age 4-6</small>
+                <small className="text-default-500 block">
+                  Occupying classroom 203
+                </small>
+              </div>
+            </CardBody>
+          </Card>
+        </Link>
+
         <div className="grid grid-cols-1 gap-4">
           <Card className="py-4 bg-light-gray">
             <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
@@ -78,7 +97,7 @@ export default function HomePage() {
             <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
               <h4 className="font-bold text-large">Team Announcement</h4>
               <small className="text-default-500 pt-2">
-                Please contact parents/ guardians if students are catching
+                Please contact parents/guardians if students are catching
                 symptoms of heat stroke
               </small>
             </CardHeader>
@@ -86,44 +105,49 @@ export default function HomePage() {
           </Card>
         </div>
       </div>
+      <h1 className="text-2xl py-2 px-3">Popular classes:</h1>
       <div className="grid grid-flow-row gap-4">
-        {DUMMY_COURSE.map((item, index) => (
+        {DUMMY_CLASS.map((item, index) => (
           <Card key={index}>
             <CardBody>
-              <div className="grid grid-cols-6 md:grid-cols-12 gap-6 md:gap-4 items-center justify-center">
-                <div className="col-span-2">
+              <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-12 gap-6 lg:gap-4 items-center">
+                <div className="col-span-1 lg:col-span-2 flex justify-center lg:justify-start">
                   <Image
-                    alt={item.course_name}
-                    className="object-cover w-32"
+                    alt={item.class_name}
+                    className="object-cover w-24 h-24 lg:w-32 lg:h-32"
                     shadow="md"
                     src={item.img}
-                    height={100}
                   />
                 </div>
-                <div className="flex flex-col col-span-8">
-                  <div className="flex flex-col gap-0">
-                    <h3 className="font-semibold text-foreground/90">
-                      {item.course_name}
-                    </h3>
-                    <p className="text-small text-foreground/80">
-                      Age Group: {item.age_group}
-                    </p>
-                    <h1 className="text-large font-medium mt-2">
-                      Few spots left
-                    </h1>
-                  </div>
+                <div className="col-span-2 lg:col-span-8 flex flex-col gap-1 lg:gap-0">
+                  <h3 className="font-semibold text-foreground/90 text-center lg:text-left">
+                    {item.class_name}
+                  </h3>
+                  <p className="text-small text-foreground/80 text-center lg:text-left">
+                    from course: {item.course_name}
+                  </p>
+                  <p className="text-small text-foreground/80 text-center lg:text-left">
+                    Age Group: {item.age_group}
+                  </p>
+                  <h1 className="text-large font-medium mt-2 text-red-600 text-center lg:text-left">
+                    Few spots left
+                  </h1>
                 </div>
-                <Button
-                  className="bg-strong-purple text-white col-span-2"
-                  variant="flat"
-                >
-                  Update status
-                </Button>
+                <div className="col-span-1 lg:col-span-2 flex justify-center lg:justify-end">
+                  <Link
+                    className="bg-strong-purple text-white inline-block text-center py-2 px-4 rounded-full hover:bg-purple-700 transition duration-300 ease-in-out"
+                    href={`/course-list/${item.course_id}/${item.id}`}
+                    aria-label={`View details of ${item.class_name}`}
+                  >
+                    View Class
+                  </Link>
+                </div>
               </div>
             </CardBody>
           </Card>
         ))}
       </div>
+
       <div className="grid grid-cols-12 grid-rows-4 gap-2 py-6">
         <Card className="col-span-6 row-span-2 h-[610px]">
           <Image
@@ -246,7 +270,7 @@ export default function HomePage() {
           />
         </Card>
       </div>
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <Card className="py-4 bg-light-violet" isPressable>
           <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
             <p className="text-tiny font-bold">Community Update</p>
@@ -255,7 +279,7 @@ export default function HomePage() {
             <div className="overflow-hidden h-32">
               <Image
                 alt="Card background"
-                className="rounded-none w-full"
+                className="rounded-none w-full object-cover h-full"
                 src="https://www.cookingclass-singapore.com/wp-content/uploads/Parent-Child-Class.jpg"
               />
             </div>
@@ -269,6 +293,7 @@ export default function HomePage() {
             </div>
           </CardBody>
         </Card>
+
         <Card className="py-4 bg-light-violet" isPressable>
           <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
             <p className="text-tiny font-bold">Community Update</p>
@@ -277,7 +302,7 @@ export default function HomePage() {
             <div className="overflow-hidden h-32">
               <Image
                 alt="Card background"
-                className="rounded-none w-full"
+                className="rounded-none w-full object-cover h-full"
                 src="https://www.ourkids.net/images/pp/sidney-ledson-institute-2024.jpg"
               />
             </div>
