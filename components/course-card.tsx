@@ -58,7 +58,7 @@ export default function CourseCard() {
                 shadow="sm"
                 radius="lg"
                 alt={item.title}
-                className="w-full h-[140px] object-cover"
+                className="w-full h-full object-fit: cover sm:h-[190px]"
                 src={item.img}
               />
             </CardBody>

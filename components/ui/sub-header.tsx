@@ -1,11 +1,13 @@
 interface SubHeaderProps {
-  header: string;
+  header?: string;
+  subHeader?: string;
 }
 
 export default function SubHeader(props: SubHeaderProps) {
   return (
     <div className="text-3xl text-center items-center h-10">
-      <h1>{props.header}</h1>
+      <b>{props.header}</b>
+      <h1 className="text-2xl">{props.subHeader}</h1>
     </div>
   );
 }
