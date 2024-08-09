@@ -16,7 +16,7 @@ export default async function ParticipantProfilePage({
   params: { participantSlug: string };
 }) {
   const participant = await searchStudentById(
-    new Types.ObjectId("64c0f90a7e6b9e2b90234567")
+    new Types.ObjectId(params.participantSlug)
   );
 
   const restructuredEnrolledClassList = participant
