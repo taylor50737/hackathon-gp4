@@ -51,7 +51,7 @@ export default function CourseTable({ courseList }: CourseTableProps) {
   const [visibleColumns, setVisibleColumns] = React.useState<Selection>(
     new Set(INITIAL_VISIBLE_COLUMNS)
   );
-  const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const [rowsPerPage, setRowsPerPage] = React.useState(10);
   const [sortDescriptor, setSortDescriptor] = React.useState<SortDescriptor>({
     column: "age",
     direction: "ascending",
@@ -240,7 +240,7 @@ export default function CourseTable({ courseList }: CourseTableProps) {
               onChange={onRowsPerPageChange}
             >
               <option value="5">5</option>
-              <option value="10">10</option>
+              <option value="10" selected>10</option>
               <option value="15">15</option>
             </select>
           </label>
@@ -303,9 +303,9 @@ export default function CourseTable({ courseList }: CourseTableProps) {
       isHeaderSticky
       bottomContent={bottomContent}
       bottomContentPlacement="outside"
-      classNames={{
-        wrapper: "max-h-[382px]",
-      }}
+      // classNames={{
+      //   wrapper: "max-h-[382px]",
+      // }}
       selectedKeys={selectedKeys}
       selectionMode="multiple"
       sortDescriptor={sortDescriptor}
