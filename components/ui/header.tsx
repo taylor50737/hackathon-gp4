@@ -9,9 +9,9 @@ import { GoGear } from "react-icons/go";
 
 export default function Header() {
   const HeaderMenus = [
-    { icon: <IoPersonCircleOutline />, path: "/header-link1" },
-    { icon: <BsBell />, path: "/header-link2" },
-    { icon: <GoGear />, path: "/header-link3" },
+    { icon: <IoPersonCircleOutline />, path: "/" },
+    { icon: <BsBell />, path: "/" },
+    { icon: <GoGear />, path: "/" },
   ];
 
   const pathname = usePathname();
@@ -42,9 +42,7 @@ export default function Header() {
         <ul className="gap-1 text-2xl flex">
           {HeaderMenus.map((menu, index) => (
             <li
-              className={`rounded-lg p-2 hover:bg-light-gray cursor-pointer ${
-                pathname === menu.path ? "bg-light-gray" : ""
-              }`}
+              className={`rounded-lg p-2 hover:bg-light-gray cursor-pointer`}
               key={index}
             >
               <Link href={menu.path}>{menu.icon}</Link>

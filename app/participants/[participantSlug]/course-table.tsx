@@ -47,6 +47,7 @@ const statusOptions = [
   { name: "Not Paid", uid: "Not Paid" },
   { name: "Withdraw", uid: "Withdraw" },
   { name: "Withdraw", uid: "withdraw" },
+  { name: "Pending", uid: "Pending" },
 ];
 
 const statusColorMap: Record<string, ChipProps["color"]> = {
@@ -54,6 +55,7 @@ const statusColorMap: Record<string, ChipProps["color"]> = {
   "Not Paid": "warning",
   Withdraw: "danger",
   withdraw: "danger",
+  Pending: "default",
 };
 
 const INITIAL_VISIBLE_COLUMNS = [
@@ -113,7 +115,7 @@ export default function ParticipantCourseTable({ courses }: CourseTableProps) {
       Array.from(statusFilter).length !== statusOptions.length
     ) {
       filteredCourses = filteredCourses.filter((course) =>
-        Array.from(statusFilter).includes(course.status)
+        Array.from(statusFilter).includes(course.status || "Pending")
       );
     }
 
@@ -160,7 +162,7 @@ export default function ParticipantCourseTable({ courses }: CourseTableProps) {
           return (
             <Chip
               className="capitalize"
-              color={statusColorMap[course.status]}
+              color={statusColorMap[course.status || "Pending"]}
               size="sm"
               variant="flat"
             >
