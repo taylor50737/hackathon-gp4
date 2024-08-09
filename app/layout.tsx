@@ -29,7 +29,7 @@ export default function RootLayout({
               <main className="flex-grow">
                 <div className="w-full md:max-2-6xl mx-auto">{children}</div>
               </main>
-              <Footer className="mt-auto" />
+              <Footer className="invisible sm:visible" />
             </div>
           </div>
         </div>

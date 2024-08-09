@@ -30,7 +30,6 @@ import { capitalize } from "@/utils/capitalize";
 import { IRestructuredClassEnrolled } from "./restructureData";
 
 const columns = [
-  { name: "ID", uid: "id", sortable: true },
   { name: "COURSE NAME", uid: "courseName", sortable: true },
   { name: "CLASS ID", uid: "classId", sortable: true },
   { name: "CLASS NAME", uid: "className", sortable: true },
@@ -39,23 +38,20 @@ const columns = [
   { name: "BEFORE/AFTER CAMP", uid: "beforeAfterCamp", sortable: true },
   { name: "PICKUP ARRANGEMENT", uid: "pickUpArrange", sortable: true },
   { name: "STATUS", uid: "status", sortable: true },
-  { name: "ACTIONS", uid: "actions" },
 ];
 
 const statusOptions = [
   { name: "Paid", uid: "Paid" },
   { name: "Not Paid", uid: "Not Paid" },
   { name: "Withdraw", uid: "Withdraw" },
-  { name: "Withdraw", uid: "withdraw" },
   { name: "Pending", uid: "Pending" },
 ];
 
 const statusColorMap: Record<string, ChipProps["color"]> = {
   Paid: "success",
   "Not Paid": "warning",
-  Withdraw: "danger",
-  withdraw: "danger",
-  Pending: "default",
+  Withdraw: "default",
+  Pending: "secondary",
 };
 
 const INITIAL_VISIBLE_COLUMNS = [
@@ -267,13 +263,13 @@ export default function ParticipantCourseTable({ courses }: CourseTableProps) {
                 ))}
               </DropdownMenu>
             </Dropdown>
-            <Button
+            {/* <Button
               className="bg-light-gray text-strong-purple"
               color="primary"
               endContent={<PlusIcon />}
             >
               Add New
-            </Button>
+            </Button> */}
             <Dropdown>
               <DropdownTrigger className="hidden sm:flex">
                 <Button
