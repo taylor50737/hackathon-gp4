@@ -64,15 +64,23 @@ export async function searchStudentById(
  * @returns {Promise<IStudent[] | null>} A promise that resolves to an array of student objects matching the search criteria,
  *                                      or null if no matches are found.
  */
-export async function searchStudentByName(
-  name: string
-): Promise<IStudent[] | null> {
-  const students = await StudentModel.find({
+export async function searchStudentByName(name: string): Promise<IStudent[] | null> {
+  const nameParts = name.split(/\s+/); // Split the name by whitespace
+  const query = nameParts.length > 1 ? { // If there are multiple parts to the name
+    $and: nameParts.map(part => ({
+      $or: [
+        { firstName: { $regex: part, $options: 'i' } },
+        { lastName: { $regex: part, $options: 'i' } }
+      ]
+    }))
+  } : {
     $or: [
       { firstName: { $regex: name, $options: 'i' } },
-      { lastName: { $regex: name, $options: 'i' } },
-    ],
-  });
+      { lastName: { $regex: name, $options: 'i' } }
+    ]
+  };
+
+  const students = await StudentModel.find(query);
   return students;
 }
 
