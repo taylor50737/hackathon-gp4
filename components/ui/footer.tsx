@@ -15,12 +15,12 @@ export default function Footer({ className }: FooterProps) {
           <div className="flex flex-col gap-2">
             <h1 className="font-bold text-xl">Admin</h1>
             <h1>Staff ID# 00001</h1>
-            <Link
+            {/* <Link
               href="/edit-profile"
               className="bg-strong-purple text-white text-sm px-14 py-2 rounded-full"
             >
               Edit Profile
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>
