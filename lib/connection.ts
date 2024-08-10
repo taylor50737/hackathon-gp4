@@ -22,11 +22,11 @@ export async function connectDb() {
     cached.promise = mongoose.connect(config.mongo.uri, {
       retryWrites: true,
       w: 'majority',
-      maxPoolSize: 1,
+      maxPoolSize: 10,
       minPoolSize: 1,
-      socketTimeoutMS: 25000,
-      serverSelectionTimeoutMS: 25000,
-      maxIdleTimeMS: 25000,
+      socketTimeoutMS: 20000,
+      serverSelectionTimeoutMS: 20000,
+      maxIdleTimeMS: 20000,
     });
 
     cached.conn = await cached.promise;
