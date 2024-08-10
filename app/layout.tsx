@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "@/components/ui/header";
 import SideNav from "@/components/ui/side-nav";
 import Footer from "@/components/ui/footer";
+import { connectDb } from "@/lib/connection";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +19,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  connectDb()
+    .then(() => {
+      console.log("Database connected successfully.");
+    })
+    .catch((error) => {
+      console.error("Database connection failed:", error);
+    });
   return (
     <html lang="en">
       <body className={inter.className}>
