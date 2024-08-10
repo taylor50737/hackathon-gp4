@@ -18,6 +18,8 @@ import {
   Pagination,
   Selection,
   SortDescriptor,
+  Chip,
+  ChipProps,
 } from "@nextui-org/react";
 
 import { PlusIcon } from "@/components/icons/PlusIcon";
@@ -51,6 +53,7 @@ const columns = [
     sortable: true,
   },
   { name: "CREDIT", uid: "credits", sortable: true },
+  { name: "STATUS", uid: "status", sortable: true },
   { name: "ACTIONS", uid: "actions" },
 ];
 
@@ -66,8 +69,23 @@ const INITIAL_VISIBLE_COLUMNS = [
   "guardianFullName",
   "emergencyFullName",
   "credit",
+  "status",
   "actions",
 ];
+
+const statusOptions = [
+  { name: "Paid", uid: "Paid" },
+  { name: "Not Paid", uid: "Not Paid" },
+  { name: "Withdraw", uid: "Withdraw" },
+  { name: "Pending", uid: "Pending" },
+];
+
+const statusColorMap: Record<string, ChipProps["color"]> = {
+  Paid: "success",
+  "Not Paid": "warning",
+  Withdraw: "default",
+  Pending: "secondary",
+};
 
 type ParticipantTableProps = {
   participantList: IRestructuredStudent[];
@@ -158,6 +176,17 @@ export default function ParticipantTable({
           return <div>{cellValue}</div>;
         case "quarter":
           return <div>{cellValue}</div>;
+          case "status":
+            return (
+              <Chip
+                className="capitalize"
+                color={statusColorMap[student.status || "Pending"]}
+                size="sm"
+                variant="flat"
+              >
+                {cellValue}
+              </Chip>
+            );
         case "actions":
           return (
             <div className="relative flex justify-end items-center gap-2">
