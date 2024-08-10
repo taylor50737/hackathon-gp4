@@ -57,14 +57,11 @@ const columns = [
 const INITIAL_VISIBLE_COLUMNS = [
   "firstName",
   "lastName",
-  "gender",
   "dob",
   "phone",
   "email",
-  "address",
   "specialNeeds",
   "guardianFullName",
-  "emergencyFullName",
   "credit",
   "actions",
 ];
