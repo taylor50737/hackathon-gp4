@@ -37,7 +37,6 @@ export default function Header() {
               src={logoImg}
               width={64}
               height={64}
-              layout="fixed" 
               className="h-12 w-full" 
             />
           </div>
