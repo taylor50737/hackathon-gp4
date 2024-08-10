@@ -1,5 +1,5 @@
-import { searchStudentsByClass } from '@/lib/query/student';
 import { Types } from 'mongoose';
+import { searchStudentsByClass } from '@/lib/query/student';
 import ParticipantTable from './participant-table';
 import { restructureStudentData } from './restructureData';
 import SubHeader from '@/components/ui/sub-header';
@@ -29,7 +29,7 @@ export default async function CourseDetailPage({
   return (
     <div className='flex flex-1 py-4 h-screen sm:h-fit flex-col space-y-2 px-4 gap-4'>
       <SubHeader header={courseName} subHeader={className} />
-      <div className='pt-10'>
+      <div className='md:pt-10'>
         <ParticipantTable participantList={restructuredParticipantList} />
       </div>
     </div>
