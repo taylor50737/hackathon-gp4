@@ -4,7 +4,6 @@ import Link from "next/link";
 
 export default async function HomePage() {
   const courseList = (await getAllCourses()) || [];
-  console.log(courseList);
   const DUMMY_CLASS = [
     {
       id: "64c0fa7afd6f9d3c123f45d6",
