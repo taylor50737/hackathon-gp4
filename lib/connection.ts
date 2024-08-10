@@ -24,9 +24,9 @@ export async function connectDb() {
       w: 'majority',
       maxPoolSize: 1,
       minPoolSize: 1,
-      socketTimeoutMS: 10000,
-      serverSelectionTimeoutMS: 10000,
-      maxIdleTimeMS: 10000,
+      socketTimeoutMS: 25000,
+      serverSelectionTimeoutMS: 25000,
+      maxIdleTimeMS: 25000,
     });
 
     cached.conn = await cached.promise;

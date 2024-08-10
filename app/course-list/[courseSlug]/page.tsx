@@ -4,12 +4,15 @@ import ClassTable from './class-table';
 import SubHeader from '@/components/ui/sub-header';
 import { searchCourseById } from '@/lib/query/course';
 import { Types } from 'mongoose';
+import { connectDb } from '@/lib/connection';
 
 export default async function CourseDetailPage({
   params,
 }: {
   params: { courseSlug: string };
 }) {
+  await connectDb();
+
   const courseId = params.courseSlug;
   const course = await searchCourseById(new Types.ObjectId(courseId));
 
