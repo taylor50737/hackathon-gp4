@@ -10,8 +10,7 @@ import { connectDb } from "@/lib/connection";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "CICS Dashboard",
-  description: "Created by create next app",
+  title: "CICS Centre for Learning"
 };
 
 export default function RootLayout({
