@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 
 import {
   Table,
@@ -20,40 +20,41 @@ import {
   Selection,
   ChipProps,
   SortDescriptor,
-} from "@nextui-org/react";
+} from '@nextui-org/react';
 
-import { PlusIcon } from "@/components/icons/PlusIcon";
-import { VerticalDotsIcon } from "@/components/icons/VerticalDotsIcon";
-import { ChevronDownIcon } from "@/components/icons/ChevronDownIcon";
-import { SearchIcon } from "@/components/icons/SearchIcon";
-import { capitalize } from "@/utils/capitalize";
-import { ClassDetails } from "@/lib/api/type";
+import { PlusIcon } from '@/components/icons/PlusIcon';
+import { VerticalDotsIcon } from '@/components/icons/VerticalDotsIcon';
+import { ChevronDownIcon } from '@/components/icons/ChevronDownIcon';
+import { SearchIcon } from '@/components/icons/SearchIcon';
+import { capitalize } from '@/utils/capitalize';
+import { ClassDetails } from '@/lib/api/type';
 
 const columns = [
-  { name: "ID", uid: "id", sortable: true },
-  { name: "CLASS NAME", uid: "name", sortable: true },
-  { name: "AGE GROUP", uid: "ageGroup", sortable: true },
-  { name: "SCHEDULE", uid: "schedule" },
-  { name: "PARTICIPANT ENROLLED", uid: "participantEnrolled", sortable: true },
-  { name: "PARTICIPANT PAID", uid: "participantPaid", sortable: true },
-  { name: "ACTIONS", uid: "actions" },
+  { name: 'ID', uid: 'id', sortable: true },
+  { name: 'CLASS NAME', uid: 'name', sortable: true },
+  { name: 'AGE GROUP', uid: 'ageGroup', sortable: true },
+  { name: 'SCHEDULE', uid: 'schedule' },
+  { name: 'PARTICIPANT ENROLLED', uid: 'participantEnrolled', sortable: true },
+  { name: 'PARTICIPANT PAID', uid: 'participantPaid', sortable: true },
+  { name: 'ACTIONS', uid: 'actions' },
 ];
 
 const INITIAL_VISIBLE_COLUMNS = [
-  "name",
-  "ageGroup",
-  "schedule",
-  "participantEnrolled",
-  "participantPaid",
-  "actions",
+  'name',
+  'ageGroup',
+  'schedule',
+  'participantEnrolled',
+  'participantPaid',
+  'actions',
 ];
 
 type ClassTableProps = {
   classList: ClassDetails[];
+  courseId: string;
 };
 
-export default function ClassTable({ classList }: ClassTableProps) {
-  const [filterValue, setFilterValue] = React.useState("");
+export default function ClassTable({ classList, courseId }: ClassTableProps) {
+  const [filterValue, setFilterValue] = React.useState('');
   const [selectedKeys, setSelectedKeys] = React.useState<Selection>(
     new Set([])
   );
@@ -62,8 +63,8 @@ export default function ClassTable({ classList }: ClassTableProps) {
   );
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
   const [sortDescriptor, setSortDescriptor] = React.useState<SortDescriptor>({
-    column: "age",
-    direction: "ascending",
+    column: 'age',
+    direction: 'ascending',
   });
 
   const [page, setPage] = React.useState(1);
@@ -71,7 +72,7 @@ export default function ClassTable({ classList }: ClassTableProps) {
   const hasSearchFilter = Boolean(filterValue);
 
   const headerColumns = React.useMemo(() => {
-    if (visibleColumns === "all") return columns;
+    if (visibleColumns === 'all') return columns;
 
     return columns.filter((column) =>
       Array.from(visibleColumns).includes(column.uid)
@@ -105,7 +106,7 @@ export default function ClassTable({ classList }: ClassTableProps) {
       const second = b[sortDescriptor.column as keyof ClassDetails] as string;
       const cmp = first < second ? -1 : first > second ? 1 : 0;
 
-      return sortDescriptor.direction === "descending" ? -cmp : cmp;
+      return sortDescriptor.direction === 'descending' ? -cmp : cmp;
     });
   }, [sortDescriptor, items]);
 
@@ -114,24 +115,24 @@ export default function ClassTable({ classList }: ClassTableProps) {
       const cellValue = classItem[columnKey as keyof ClassDetails];
 
       switch (columnKey) {
-        case "name":
+        case 'name':
           return <div>{cellValue}</div>;
-        case "year":
+        case 'year':
           return <div>{cellValue}</div>;
-        case "quarter":
+        case 'quarter':
           return <div>{cellValue}</div>;
-        case "actions":
+        case 'actions':
           return (
-            <div className="relative flex justify-end items-center gap-2">
+            <div className='relative flex justify-end items-center gap-2'>
               <Dropdown>
                 <DropdownTrigger>
-                  <Button isIconOnly size="sm" variant="light">
-                    <VerticalDotsIcon className="text-default-300" />
+                  <Button isIconOnly size='sm' variant='light'>
+                    <VerticalDotsIcon className='text-default-300' />
                   </Button>
                 </DropdownTrigger>
                 <DropdownMenu>
                   <DropdownItem
-                    href={`/course-list/64c0f8bdfd6f9d3c123f45ab/${classItem.id}`}
+                    href={`/course-list/${courseId}/${classItem.id}`}
                   >
                     View
                   </DropdownItem>
@@ -173,49 +174,49 @@ export default function ClassTable({ classList }: ClassTableProps) {
       setFilterValue(value);
       setPage(1);
     } else {
-      setFilterValue("");
+      setFilterValue('');
     }
   }, []);
 
   const onClear = React.useCallback(() => {
-    setFilterValue("");
+    setFilterValue('');
     setPage(1);
   }, []);
 
   const topContent = React.useMemo(() => {
     return (
-      <div className="flex flex-col gap-4">
-        <div className="flex justify-between gap-3 items-end">
+      <div className='flex flex-col gap-4'>
+        <div className='flex justify-between gap-3 items-end'>
           <Input
             isClearable
-            className="w-full sm:max-w-[44%]"
-            placeholder="Search by class name..."
+            className='w-full sm:max-w-[44%]'
+            placeholder='Search by class name...'
             startContent={<SearchIcon />}
             value={filterValue}
             onClear={() => onClear()}
             onValueChange={onSearchChange}
           />
-          <div className="flex gap-3">
+          <div className='flex gap-3'>
             <Dropdown>
-              <DropdownTrigger className="hidden sm:flex">
+              <DropdownTrigger className='hidden sm:flex'>
                 <Button
-                  className="bg-light-gray text-strong-purple"
-                  endContent={<ChevronDownIcon className="text-small" />}
-                  variant="flat"
+                  className='bg-light-gray text-strong-purple'
+                  endContent={<ChevronDownIcon className='text-small' />}
+                  variant='flat'
                 >
                   Columns
                 </Button>
               </DropdownTrigger>
               <DropdownMenu
                 disallowEmptySelection
-                aria-label="Table Columns"
+                aria-label='Table Columns'
                 closeOnSelect={false}
                 selectedKeys={visibleColumns}
-                selectionMode="multiple"
+                selectionMode='multiple'
                 onSelectionChange={setVisibleColumns}
               >
                 {columns.map((column) => (
-                  <DropdownItem key={column.uid} className="capitalize">
+                  <DropdownItem key={column.uid} className='capitalize'>
                     {capitalize(column.name)}
                   </DropdownItem>
                 ))}
@@ -230,19 +231,19 @@ export default function ClassTable({ classList }: ClassTableProps) {
             </Button> */}
           </div>
         </div>
-        <div className="flex justify-between items-center">
-          <span className="text-default-400 text-small">
+        <div className='flex justify-between items-center'>
+          <span className='text-default-400 text-small'>
             Total {classList.length} classes
           </span>
-          <label className="flex items-center text-default-400 text-small">
+          <label className='flex items-center text-default-400 text-small'>
             Rows per page:
             <select
-              className="bg-transparent outline-none text-default-400 text-small"
+              className='bg-transparent outline-none text-default-400 text-small'
               onChange={onRowsPerPageChange}
             >
-              <option value="5">5</option>
-              <option value="10">10</option>
-              <option value="15">15</option>
+              <option value='5'>5</option>
+              <option value='10'>10</option>
+              <option value='15'>15</option>
             </select>
           </label>
         </div>
@@ -259,36 +260,36 @@ export default function ClassTable({ classList }: ClassTableProps) {
 
   const bottomContent = React.useMemo(() => {
     return (
-      <div className="py-2 px-2 flex justify-between items-center">
-        <span className="w-[30%] text-small text-default-400">
-          {selectedKeys === "all"
-            ? "All items selected"
+      <div className='py-2 px-2 flex justify-between items-center'>
+        <span className='w-[30%] text-small text-default-400'>
+          {selectedKeys === 'all'
+            ? 'All items selected'
             : `${selectedKeys.size} of ${filteredItems.length} selected`}
         </span>
         <Pagination
           isCompact
           showControls
           showShadow
-          color="secondary"
+          color='secondary'
           page={page}
           total={pages}
           onChange={setPage}
         />
-        <div className="hidden sm:flex w-[30%] justify-end gap-2">
+        <div className='hidden sm:flex w-[30%] justify-end gap-2'>
           <Button
-            className="bg-light-gray text-strong-purple"
+            className='bg-light-gray text-strong-purple'
             isDisabled={pages === 1}
-            size="sm"
-            variant="flat"
+            size='sm'
+            variant='flat'
             onPress={onPreviousPage}
           >
             Previous
           </Button>
           <Button
-            className="bg-light-gray text-strong-purple"
+            className='bg-light-gray text-strong-purple'
             isDisabled={pages === 1}
-            size="sm"
-            variant="flat"
+            size='sm'
+            variant='flat'
             onPress={onNextPage}
           >
             Next
@@ -300,18 +301,18 @@ export default function ClassTable({ classList }: ClassTableProps) {
 
   return (
     <Table
-      aria-label="Example table with custom cells, pagination and sorting"
+      aria-label='Example table with custom cells, pagination and sorting'
       isHeaderSticky
       bottomContent={bottomContent}
-      bottomContentPlacement="outside"
+      bottomContentPlacement='outside'
       classNames={{
-        wrapper: "max-h-[382px]",
+        wrapper: 'max-h-[382px]',
       }}
       selectedKeys={selectedKeys}
-      selectionMode="multiple"
+      selectionMode='multiple'
       sortDescriptor={sortDescriptor}
       topContent={topContent}
-      topContentPlacement="outside"
+      topContentPlacement='outside'
       onSelectionChange={setSelectedKeys}
       onSortChange={setSortDescriptor}
     >
@@ -319,14 +320,14 @@ export default function ClassTable({ classList }: ClassTableProps) {
         {(column) => (
           <TableColumn
             key={column.uid}
-            align={column.uid === "actions" ? "center" : "start"}
+            align={column.uid === 'actions' ? 'center' : 'start'}
             allowsSorting={column.sortable}
           >
             {column.name}
           </TableColumn>
         )}
       </TableHeader>
-      <TableBody emptyContent={"No classes found"} items={sortedItems}>
+      <TableBody emptyContent={'No classes found'} items={sortedItems}>
         {(item) => (
           <TableRow key={item.id}>
             {(columnKey) => (
