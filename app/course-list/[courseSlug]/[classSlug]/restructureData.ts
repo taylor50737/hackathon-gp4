@@ -16,6 +16,7 @@ export interface IRestructuredStudent {
   emergencyPhone: number;
   emergencyRelationship: string;
   credits?: number;
+  status?: string;
 }
 
 export const restructureStudentData = (
@@ -37,5 +38,6 @@ export const restructureStudentData = (
     emergencyPhone: student.emergency.phone,
     emergencyRelationship: student.emergency.relationship,
     credits: student.credits ? student.credits : 0,
+    status: student.classEnrolled[0].status,
   }));
 };

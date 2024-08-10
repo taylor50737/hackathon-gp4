@@ -1,11 +1,11 @@
-import { Types } from 'mongoose';
-import { searchStudentsByClass } from '@/lib/query/student';
-import ParticipantTable from './participant-table';
-import { restructureStudentData } from './restructureData';
-import SubHeader from '@/components/ui/sub-header';
-import { searchCourseById } from '@/lib/query/course';
-import { searchClassById } from '@/lib/query/classes';
-import { connectDb } from '@/lib/connection';
+import { Types } from "mongoose";
+import { searchStudentsByClass } from "@/lib/query/student";
+import ParticipantTable from "./participant-table";
+import { restructureStudentData } from "./restructureData";
+import SubHeader from "@/components/ui/sub-header";
+import { searchCourseById } from "@/lib/query/course";
+import { searchClassById } from "@/lib/query/classes";
+import { connectDb } from "@/lib/connection";
 
 export default async function CourseDetailPage({
   params,
@@ -27,9 +27,9 @@ export default async function CourseDetailPage({
   const restructuredParticipantList = restructureStudentData(participantList);
 
   return (
-    <div className='flex flex-1 py-4 h-screen sm:h-fit flex-col space-y-2 px-4 gap-4'>
+    <div className="flex flex-1 py-4 h-screen sm:h-fit flex-col space-y-2 px-4 gap-4">
       <SubHeader header={courseName} subHeader={className} />
-      <div className='md:pt-10'>
+      <div className="md:pt-10">
         <ParticipantTable participantList={restructuredParticipantList} />
       </div>
     </div>
