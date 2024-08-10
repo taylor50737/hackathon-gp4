@@ -35,7 +35,10 @@ export default function Header() {
             <Image
               alt="CICS Logo"
               src={logoImg}
-              className="h-16 w-full md:w-full"
+              width={64}
+              height={64}
+              layout="fixed" 
+              className="h-12 w-full" 
             />
           </div>
         </Link>
